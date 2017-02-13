@@ -1,6 +1,7 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 html, body {
     height: 100%;
+    font-size: 15px;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
 
 
 #main {
-    min-height: 630px;
+    min-height: 627px;
 }
 
 .logo {
@@ -35,15 +36,6 @@ body {
     white-space: normal;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="select"] {
-    max-width: 280px;
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
@@ -57,4 +49,37 @@ input[type="select"] {
 
 #main-navigation {
     padding: 0;
+    box-shadow: 0 7px 10px lightgrey;
+}
+
+.login-form {
+    padding: 0 50px;
+}
+
+.card-only {
+    margin-top: 25px;
+}
+
+.separator {
+    height: 0.5px;
+    background-color: #B1B1B1;
+    text-align: center;
+    padding: 0;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+    .separator p {
+        display: inline-block;
+        text-align: center;
+        background-color: white;
+        position: relative;
+        top: -10px;
+        line-height: 10px;
+        padding: 0 5px;
+    }
+
+.btn-login {
+    width: 300px;
 }

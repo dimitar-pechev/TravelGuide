@@ -55,9 +55,9 @@ namespace TravelGuide
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "985926961508780",
+               appSecret: "041751b988df1d6ddfbf87dc2931fb7a");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

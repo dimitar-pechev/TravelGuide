@@ -1,15 +1,16 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OpenAuthProviders.ascx.cs" Inherits="TravelGuide.Account.OpenAuthProviders" %>
 
 <div id="socialLoginList">
-    <h4>Use another service to log in.</h4>
-    <hr />
+    <div class="separator">
+        <p>or</p>
+    </div>
     <asp:ListView runat="server" ID="providerDetails" ItemType="System.String"
         SelectMethod="GetProviderNames" ViewStateMode="Disabled">
         <ItemTemplate>
             <p>
-                <button type="submit" class="btn btn-default" name="provider" value="<%#: Item %>"
+                <button type="submit" class="btn btn-default btn-login" name="provider" value="<%#: Item %>"
                     title="Log in using your <%#: Item %> account.">
-                    <%#: Item %>
+                  Connect with <%#: Item %>
                 </button>
             </p>
         </ItemTemplate>
