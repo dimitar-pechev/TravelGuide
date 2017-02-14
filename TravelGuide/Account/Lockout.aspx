@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <hgroup>
-        <h1>Locked out.</h1>
-        <h2 class="text-danger">This account has been locked out, please try again later.</h2>
+        <h1 class="text-center">Locked out.</h1>
+        <h4 class="text-danger text-center">You have entered incorrect credentials 5 times. The login service is locked for five minutes!</h4>
     </hgroup>
 </asp:Content>

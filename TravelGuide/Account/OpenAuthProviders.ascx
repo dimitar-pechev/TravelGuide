@@ -8,9 +8,9 @@
         SelectMethod="GetProviderNames" ViewStateMode="Disabled">
         <ItemTemplate>
             <p>
-                <button type="submit" class="btn btn-default btn-login" name="provider" value="<%#: Item %>"
+                <button type="submit" class="btn btn-default btn-login btn-facebook" name="provider" value="<%#: Item %>"
                     title="Log in using your <%#: Item %> account.">
-                  Connect with <%#: Item %>
+                    <img src="../Images/fb-art.png" alt="fb-icon" class="fb-icon pull-left" />    Connect with <%#: Item %>
                 </button>
             </p>
         </ItemTemplate>

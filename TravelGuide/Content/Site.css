@@ -83,3 +83,21 @@ body {
 .btn-login {
     width: 300px;
 }
+
+.btn-facebook {
+    background-color: #3B5998;
+}
+
+    .btn-facebook:hover, .btn-facebook:focus {
+        background-color: midnightblue;
+    }
+
+.fb-icon {
+    max-height: 32px;
+    display: inline;
+}
+
+.error-message {
+    font-size: 13px;
+    color: #b94a48 !important;
+}
