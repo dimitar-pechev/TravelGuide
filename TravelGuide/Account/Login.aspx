@@ -22,12 +22,13 @@
                                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="control-label">Email</asp:Label>
                                         <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                                         <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                            CssClass="text-danger" ErrorMessage="The email field is required." />
+                                            CssClass="text-danger" Display="Dynamic" ErrorMessage="The email field is required." />
                                     </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="control-label">Password</asp:Label>
                                         <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                                        <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                             ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
                                     </div>
                                     <div class="form-group hidden">
                                         <div class="checkbox">

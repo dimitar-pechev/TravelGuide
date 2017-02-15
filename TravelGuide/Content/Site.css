@@ -2,6 +2,7 @@
 html, body {
     height: 100%;
     font-size: 15px;
+    background-color: #E6EBED;
 }
 
 body {
@@ -50,7 +51,7 @@ body {
 
 #main-navigation {
     padding: 0;
-    box-shadow: 0 7px 10px black;
+    box-shadow: 0 0 20px black;
 }
 
 .login-form {
@@ -106,5 +107,4 @@ body {
 .landing-page-image {
     position: absolute;
     top: 0;
-    z-index: -1;
 }
