@@ -20,6 +20,7 @@ body {
 
 .footer {
     min-height: 46px;
+    z-index: 9999;
 }
 
 /* Wrapping element */
@@ -49,7 +50,7 @@ body {
 
 #main-navigation {
     padding: 0;
-    box-shadow: 0 7px 10px lightgrey;
+    box-shadow: 0 7px 10px black;
 }
 
 .login-form {
@@ -57,7 +58,7 @@ body {
 }
 
 .card-only {
-    margin-top: 25px;
+    margin-top: 45px;
 }
 
 .separator {
@@ -67,7 +68,7 @@ body {
     padding: 0;
     margin: auto;
     margin-bottom: 10px;
-    width: 300px;
+    width: 270px;
 }
 
     .separator p {
@@ -81,7 +82,7 @@ body {
     }
 
 .btn-login {
-    width: 300px;
+    width: 270px;
 }
 
 .btn-facebook {
@@ -89,7 +90,7 @@ body {
 }
 
     .btn-facebook:hover, .btn-facebook:focus {
-        background-color: midnightblue;
+        background-color: #5874e2;
     }
 
 .fb-icon {
@@ -100,4 +101,10 @@ body {
 .error-message {
     font-size: 13px;
     color: #b94a48 !important;
+}
+
+.landing-page-image {
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }

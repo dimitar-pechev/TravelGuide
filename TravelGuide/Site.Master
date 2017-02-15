@@ -41,7 +41,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top blue-grey" id="main-navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top black" id="main-navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -75,12 +75,12 @@
                 </div>
             </div>
         </div>
-        <div class="container body-content" id="main">
+        <div class="container-fluid body-content" id="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <footer class="page-footer footer footer-content text-center small blue-grey">
+    <footer class="page-footer footer footer-content text-center black hidden">
         <p class="text-white">&copy; <%: DateTime.Now.Year %> All Rights Reserved </p>
     </footer>
     <script src="/Scripts/MDB/mdb.js"></script>
