@@ -33,6 +33,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\telerik.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -378,6 +381,14 @@
     <ProjectReference Include="..\TravelGuide.Auth\TravelGuide.Auth.csproj">
       <Project>{78267A3E-4CF3-4DC7-A696-4A70F256DC9B}</Project>
       <Name>TravelGuide.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TravelGuide.Data\TravelGuide.Data.csproj">
+      <Project>{64ED0FB4-8613-42FC-AEA8-BFC99E6AD5AC}</Project>
+      <Name>TravelGuide.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TravelGuide.Models\TravelGuide.Models.csproj">
+      <Project>{1DA27616-0AB0-4D17-A14B-89158F93B5CF}</Project>
+      <Name>TravelGuide.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

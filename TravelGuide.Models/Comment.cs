@@ -7,6 +7,8 @@ namespace TravelGuide.Models
         public Comment()
         {
             this.Id = Guid.NewGuid();
+            this.CreatedOn = DateTime.Now;
+            this.IsDeleted = false;
         }
 
         public Guid Id { get; set; }
