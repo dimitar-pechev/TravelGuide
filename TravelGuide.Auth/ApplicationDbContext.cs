@@ -5,7 +5,7 @@ namespace TravelGuide.Auth
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("TravelGuideDb", throwIfV1Schema: false)
         {
         }
 
