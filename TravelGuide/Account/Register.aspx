@@ -15,10 +15,16 @@
                                 </p>
                                 <asp:ValidationSummary runat="server" CssClass="text-danger small" />
                                 <div class="form-group">
-                                    <asp:Label runat="server" AssociatedControlID="Email" CssClass="control-label">Email</asp:Label>
+                                    <asp:Label runat="server" AssociatedControlID="Username" CssClass="control-label">Username</asp:Label>
+                                    <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
+                                        CssClass="text-danger" Display="Dynamic" ErrorMessage="The username field is required." />
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label runat="server" AssociatedControlID="Email" CssClass="control-label">E-Mail</asp:Label>
                                     <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                                     <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                        CssClass="text-danger" Display="Dynamic" ErrorMessage="The email field is required." />
+                                        CssClass="text-danger" Display="Dynamic" ErrorMessage="The E-Mail field is required." />
                                 </div>
                                 <div class="form-group">
                                     <asp:Label runat="server" AssociatedControlID="Password" CssClass="control-label">Password</asp:Label>
