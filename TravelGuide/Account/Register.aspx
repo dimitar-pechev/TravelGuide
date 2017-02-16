@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TravelGuide.Account.Register" %>
 
+<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <div class="container">
         <div class="row card-only">
@@ -43,6 +45,9 @@
                                 <div class="form-group">
                                     <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default btn-login" />
                                 </div>
+                                <section id="socialLoginForm">
+                                    <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
+                                </section>
                             </div>
                         </div>
                     </div>

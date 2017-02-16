@@ -59,15 +59,15 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" class="waves-effect waves-light" href="~/Account/Login">Sign in</a></li>
                                 <li><a runat="server" class="waves-effect waves-light" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" class="waves-effect waves-light" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" class="waves-effect waves-light" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/Account/Manage" class="waves-effect waves-light" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
                                 <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" CssClass="waves-effect waves-light" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" CssClass="waves-effect waves-light" LogoutText="Sign out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
