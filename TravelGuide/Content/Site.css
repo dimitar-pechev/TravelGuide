@@ -108,3 +108,7 @@ body {
     position: absolute;
     top: 0;
 }
+
+.text-info {
+    font-size: 14px;
+}

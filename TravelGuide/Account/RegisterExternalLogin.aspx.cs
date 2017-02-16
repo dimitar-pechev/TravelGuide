@@ -92,7 +92,12 @@ namespace TravelGuide.Account
             }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text };
+            var user = new ApplicationUser()
+            {
+                UserName = Username.Text,
+                Email = email.Text,
+                RegisteredOn = DateTime.Now
+            };
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {
