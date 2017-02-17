@@ -112,3 +112,24 @@ body {
 .text-info {
     font-size: 14px;
 }
+
+.discover-heading-image {
+    margin: 0;
+    padding: 0;
+}
+
+.discover-heading {
+    margin: 0;
+}
+
+.search-label-discover {
+    padding-top: 10px;
+    font-size: 1.2rem;
+}
+
+.destinations-container{
+    margin-top: -5%;
+    padding-top: 5%;
+    background-color: white;
+    min-height: 600px;
+}

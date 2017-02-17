@@ -180,6 +180,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="CitiesAndSites.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\mdb.css" />
@@ -191,6 +192,7 @@
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\boka-kotorska-1920x890.jpg" />
+    <Content Include="Images\destinations-heading.png" />
     <Content Include="Images\fb-art.png" />
     <Content Include="Images\logo-transparent.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -295,6 +297,13 @@
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CitiesAndSites.aspx.cs">
+      <DependentUpon>CitiesAndSites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitiesAndSites.aspx.designer.cs">
+      <DependentUpon>CitiesAndSites.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
