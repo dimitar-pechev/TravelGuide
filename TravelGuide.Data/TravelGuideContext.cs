@@ -11,7 +11,7 @@ namespace TravelGuide.Data
             : base("TravelGuideDb")
         {
         }
-
+        
         public IDbSet<Article> Articles { get; set; }
 
         public IDbSet<ArticleComment> Comments { get; set; }

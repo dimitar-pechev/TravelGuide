@@ -195,12 +195,13 @@ body {
     border-radius: 5px;
     padding: 10px 15px;
     color: black;
-} 
-
-.btn-page:hover {
-    background-color: #e0e0e0;
-    color: black;
+    user-select: none;
 }
+
+    .btn-page:hover {
+        background-color: #e0e0e0;
+        color: black;
+    }
 
 .btn-page-active {
     background-color: #e0e0e0;

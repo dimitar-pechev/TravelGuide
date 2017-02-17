@@ -15,7 +15,6 @@ namespace TravelGuide
 
         protected void BtnSubmitNewArticle_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

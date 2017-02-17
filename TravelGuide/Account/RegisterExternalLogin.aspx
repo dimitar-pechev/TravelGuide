@@ -18,7 +18,7 @@
                                     </p>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Username" CssClass="control-label">Username</asp:Label>
-                                        <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
+                                        <asp:TextBox runat="server" ID="Username" CssClass="" />
                                         <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
                                             Display="Dynamic" CssClass="text-danger" ErrorMessage="Username is required" />
                                     </div>

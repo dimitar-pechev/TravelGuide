@@ -361,6 +361,10 @@
       <Project>{1DA27616-0AB0-4D17-A14B-89158F93B5CF}</Project>
       <Name>TravelGuide.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TravelGuide.Services\TravelGuide.Services.csproj">
+      <Project>{AABE8655-4985-4966-80F6-CD2375E0CA5B}</Project>
+      <Name>TravelGuide.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

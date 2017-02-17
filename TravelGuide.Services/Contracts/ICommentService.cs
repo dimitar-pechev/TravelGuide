@@ -8,7 +8,7 @@ namespace TravelGuide.Services.Contracts
     {
         IEnumerable<ArticleComment> GetAllComments();
 
-        ArticleComment GetCommentById(Guid Id);
+        ArticleComment GetCommentById(Guid id);
 
         void CreateComment(ArticleComment comment);
 

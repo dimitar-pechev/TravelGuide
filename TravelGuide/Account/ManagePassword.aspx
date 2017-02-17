@@ -20,7 +20,7 @@
                                             <hr />
                                             <div class="form-group">
                                                 <asp:Label runat="server" AssociatedControlID="password" CssClass="control-label">Password</asp:Label>
-                                                <asp:TextBox runat="server" ID="password" TextMode="Password" CssClass="form-control" />
+                                                <asp:TextBox runat="server" ID="password" TextMode="Password" CssClass="" />
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="password"
                                                     CssClass="text-danger" ErrorMessage="The password field is required."
                                                     Display="Dynamic" ValidationGroup="SetPassword" />
@@ -31,7 +31,7 @@
                                             <div class="form-group">
                                                 <asp:Label runat="server" AssociatedControlID="confirmPassword" CssClass="control-label">Confirm password</asp:Label>
 
-                                                <asp:TextBox runat="server" ID="confirmPassword" TextMode="Password" CssClass="form-control" />
+                                                <asp:TextBox runat="server" ID="confirmPassword" TextMode="Password" CssClass="" />
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
                                                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required."
                                                     ValidationGroup="SetPassword" />
@@ -51,21 +51,21 @@
                                             <asp:ValidationSummary runat="server" ShowModelStateErrors="true" CssClass="text-danger" />
                                             <div class="form-group">
                                                 <asp:Label runat="server" ID="CurrentPasswordLabel" AssociatedControlID="CurrentPassword" CssClass="control-label">Current password</asp:Label>
-                                                <asp:TextBox runat="server" ID="CurrentPassword" TextMode="Password" CssClass="form-control" />
+                                                <asp:TextBox runat="server" ID="CurrentPassword" TextMode="Password" CssClass="" />
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="CurrentPassword"
                                                     CssClass="text-danger" ErrorMessage="The current password field is required."
                                                     ValidationGroup="ChangePassword" />
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label runat="server" ID="NewPasswordLabel" AssociatedControlID="NewPassword" CssClass="control-label">New password</asp:Label>
-                                                <asp:TextBox runat="server" ID="NewPassword" TextMode="Password" CssClass="form-control" />
+                                                <asp:TextBox runat="server" ID="NewPassword" TextMode="Password" CssClass="" />
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="NewPassword"
                                                     CssClass="text-danger" ErrorMessage="The new password is required."
                                                     ValidationGroup="ChangePassword" />
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label runat="server" ID="ConfirmNewPasswordLabel" AssociatedControlID="ConfirmNewPassword" CssClass="control-label">Confirm new password</asp:Label>
-                                                <asp:TextBox runat="server" ID="ConfirmNewPassword" TextMode="Password" CssClass="form-control" />
+                                                <asp:TextBox runat="server" ID="ConfirmNewPassword" TextMode="Password" CssClass="" />
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmNewPassword"
                                                     CssClass="text-danger" Display="Dynamic" ErrorMessage="Confirm new password is required."
                                                     ValidationGroup="ChangePassword" />

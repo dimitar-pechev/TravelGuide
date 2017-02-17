@@ -20,13 +20,13 @@
                                     </asp:PlaceHolder>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Username" CssClass="control-label">Username</asp:Label>
-                                        <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
+                                        <asp:TextBox runat="server" ID="Username" CssClass="" />
                                         <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
                                             CssClass="text-danger" Display="Dynamic" ErrorMessage="The username field is required." />
                                     </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="control-label">Password</asp:Label>
-                                        <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
+                                        <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="" />
                                         <asp:RequiredFieldValidator runat="server" Display="Dynamic"
                                              ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
                                     </div>
