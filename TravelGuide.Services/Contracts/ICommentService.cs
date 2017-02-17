@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using TravelGuide.Models;
+using TravelGuide.Models.Articles;
 
 namespace TravelGuide.Services.Contracts
 {
     public interface ICommentService
     {
-        IEnumerable<Comment> GetAllComments();
+        IEnumerable<ArticleComment> GetAllComments();
 
-        Comment GetCommentById(Guid Id);
+        ArticleComment GetCommentById(Guid Id);
 
-        void CreateComment(Comment comment);
+        void CreateComment(ArticleComment comment);
 
-        void EditComment(Comment comment);
+        void EditComment(ArticleComment comment);
 
-        void DeleteComment(Comment comment);
+        void DeleteComment(ArticleComment comment);
     }
 }

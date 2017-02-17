@@ -75,7 +75,8 @@ namespace TravelGuide.Account
                 }
                 else
                 {
-                    email.Text = loginInfo.Email;
+                    this.Username.Text = string.Empty;
+                    this.Username.Focus();
                 }
             }
         }        
@@ -93,10 +94,9 @@ namespace TravelGuide.Account
             }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new ApplicationUser()
+            var user = new User()
             {
                 UserName = Username.Text,
-                Email = email.Text,
                 RegisteredOn = DateTime.Now
             };
             IdentityResult result = manager.Create(user);
@@ -111,12 +111,10 @@ namespace TravelGuide.Account
                 result = manager.AddLogin(user.Id, loginInfo.Login);
                 if (result.Succeeded)
                 {
+                    var currentUser = manager.FindByName(user.UserName);
+                    var roleresult = manager.AddToRole(currentUser.Id, "user");
+
                     signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // var code = manager.GenerateEmailConfirmationToken(user.Id);
-                    // Send this link via email: IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id)
-
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                     return;
                 }

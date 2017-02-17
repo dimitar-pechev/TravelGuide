@@ -1,8 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace TravelGuide.Models
+namespace TravelGuide.Models.Abstractions
 {
-    public class Comment
+    public abstract class Comment
     {
         public Comment()
         {
@@ -11,9 +12,12 @@ namespace TravelGuide.Models
             this.IsDeleted = false;
         }
 
+        [Key]
         public Guid Id { get; set; }
 
-        public string Author { get; set; }
+        public Guid UserId { get; set; }
+
+        public virtual User User { get; set; }
 
         public string Content { get; set; }
 

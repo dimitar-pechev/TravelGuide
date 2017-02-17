@@ -1,6 +1,5 @@
-using System.Collections.Generic;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity.Migrations;
-using TravelGuide.Models;
 
 namespace TravelGuide.Data.Migrations
 {
@@ -14,6 +13,13 @@ namespace TravelGuide.Data.Migrations
 
         protected override void Seed(TravelGuideContext context)
         {
+            var admin = new IdentityRole("admin");
+            var user = new IdentityRole("user");
+
+            context.Roles.Add(admin);
+            context.Roles.Add(user);
+
+            context.SaveChanges();
         }
     }
 }

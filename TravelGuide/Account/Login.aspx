@@ -19,10 +19,10 @@
                                         </p>
                                     </asp:PlaceHolder>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="Email" CssClass="control-label">Email</asp:Label>
-                                        <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                            CssClass="text-danger" Display="Dynamic" ErrorMessage="The email field is required." />
+                                        <asp:Label runat="server" AssociatedControlID="Username" CssClass="control-label">Username</asp:Label>
+                                        <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
+                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
+                                            CssClass="text-danger" Display="Dynamic" ErrorMessage="The username field is required." />
                                     </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="control-label">Password</asp:Label>

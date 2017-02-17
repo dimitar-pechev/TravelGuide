@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TravelGuide.Models
+namespace TravelGuide.Models.Articles
 {
     public class Article
     {
@@ -9,14 +9,16 @@ namespace TravelGuide.Models
         {
             this.Id = Guid.NewGuid();
             this.CreatedOn = DateTime.Now;
-            this.Comments = new HashSet<Comment>();
-            this.Likes = new List<string>();
+            this.Comments = new HashSet<ArticleComment>();
+            this.Likes = new HashSet<ArticleLike>();
             this.IsDeleted = false;
         }
 
         public Guid Id { get; set; }
 
-        public string Author { get; set; }
+        public Guid UserId { get; set; }
+
+        public virtual User User { get; set; }
 
         public string Title { get; set; }
 
@@ -28,8 +30,8 @@ namespace TravelGuide.Models
 
         public bool IsDeleted { get; set; }
 
-        public virtual ICollection<string> Likes { get; set; }
+        public virtual ICollection<ArticleLike> Likes { get; set; }
 
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<ArticleComment> Comments { get; set; }
     }
 }

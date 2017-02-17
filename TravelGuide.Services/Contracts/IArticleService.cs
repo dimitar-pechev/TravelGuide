@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using TravelGuide.Models;
+using TravelGuide.Models.Articles;
 
 namespace TravelGuide.Services.Contracts
 {

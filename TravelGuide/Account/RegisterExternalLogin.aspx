@@ -13,22 +13,14 @@
                                     <hr />
                                     <asp:ValidationSummary runat="server" ShowModelStateErrors="true" CssClass="text-danger" />
                                     <p class="text-info">
-                                        You've authenticated with <strong><%: ProviderName %></strong>. Please enter a username and an email below for the current site
+                                        You've authenticated with <strong><%: ProviderName %></strong>. Please enter a username below for the current site
                 and click the Sign in button.
                                     </p>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="email" CssClass="control-label">Username</asp:Label>
+                                        <asp:Label runat="server" AssociatedControlID="Username" CssClass="control-label">Username</asp:Label>
                                         <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
                                         <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
                                             Display="Dynamic" CssClass="text-danger" ErrorMessage="Username is required" />
-                                        <asp:ModelErrorMessage runat="server" ModelStateKey="Username" CssClass="text-error" />
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="email" CssClass="control-label">Email</asp:Label>
-                                        <asp:TextBox runat="server" ID="email" CssClass="form-control" TextMode="Email" />
-                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="email"
-                                            Display="Dynamic" CssClass="text-danger" ErrorMessage="Email is required" />
-                                        <asp:ModelErrorMessage runat="server" ModelStateKey="email" CssClass="text-error" />
                                     </div>
                                     <div class="form-group">
                                         <asp:Button runat="server" Text="Sing in" CssClass="btn btn-default btn-login" OnClick="LogIn_Click" />

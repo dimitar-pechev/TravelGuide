@@ -1,11 +1,11 @@
 ﻿using System.Data.Entity;
-using TravelGuide.Models;
+using TravelGuide.Models.Articles;
 
 namespace TravelGuide.Data
 {
     public interface ITravelGuideContext
     {
-        IDbSet<Comment> Comments { get; }
+        IDbSet<ArticleComment> Comments { get; }
 
         IDbSet<Article> Articles { get; }
         

@@ -15,16 +15,19 @@ namespace TravelGuide.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser()
+            var user = new User()
             {
                 UserName = this.Username.Text,
                 Email = this.Email.Text,
-                RegisteredOn = DateTime.Now,
-                 
+                RegisteredOn = DateTime.Now
             };
+            
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
+                var currentUser = manager.FindByName(user.UserName);
+                var roleresult = manager.AddToRole(currentUser.Id, "user");
+
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }

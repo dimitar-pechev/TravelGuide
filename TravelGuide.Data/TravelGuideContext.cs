@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using TravelGuide.Models;
+using TravelGuide.Models.Articles;
 
 namespace TravelGuide.Data
 {
-    public class TravelGuideContext : IdentityDbContext<ApplicationUser>, ITravelGuideContext
+    public class TravelGuideContext : IdentityDbContext<User>, ITravelGuideContext
     {
         public TravelGuideContext()
             : base("TravelGuideDb")
@@ -13,7 +14,7 @@ namespace TravelGuide.Data
 
         public IDbSet<Article> Articles { get; set; }
 
-        public IDbSet<Comment> Comments { get; set; }
+        public IDbSet<ArticleComment> Comments { get; set; }
                 
         public new void SaveChanges()
         {
