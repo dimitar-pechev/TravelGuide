@@ -37,7 +37,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button runat="server" OnClick="LogIn" Text="Sing in" CssClass="btn btn-default btn-login" />
+                                        <asp:Button runat="server" OnClick="LogIn" Text="Sing in" CssClass="btn btn-success btn-login" />
                                     </div>
                                 </div>
                                 <p class="hidden">

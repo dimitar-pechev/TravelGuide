@@ -7824,8 +7824,8 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search-md]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #30cfc0;
-    box-shadow: 0 1px 0 0 #30cfc0;
+  border-bottom: 1px solid #00D255;
+    box-shadow: 0 1px 0 0 #00D255;
 }
 
 input[type=text]:focus:not([readonly]) + label,

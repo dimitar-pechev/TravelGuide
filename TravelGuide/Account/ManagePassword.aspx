@@ -40,7 +40,7 @@
                                                     ValidationGroup="SetPassword" />
                                             </div>
                                             <div class="form-group">
-                                                <asp:Button runat="server" Text="Set Password" ValidationGroup="SetPassword" OnClick="SetPassword_Click" CssClass="btn btn-default" />
+                                                <asp:Button runat="server" Text="Set Password" ValidationGroup="SetPassword" OnClick="SetPassword_Click" CssClass="btn btn-success btn-login" />
                                             </div>
                                         </div>
                                     </asp:PlaceHolder>
@@ -75,7 +75,7 @@
 
                                             </div>
                                             <div class="form-group">
-                                                <asp:Button runat="server" Text="Change Password" ValidationGroup="ChangePassword" OnClick="ChangePassword_Click" CssClass="btn btn-default btn-login" />
+                                                <asp:Button runat="server" Text="Change Password" ValidationGroup="ChangePassword" OnClick="ChangePassword_Click" CssClass="btn btn-success btn-login" />
                                             </div>
                                         </div>
                                     </asp:PlaceHolder>

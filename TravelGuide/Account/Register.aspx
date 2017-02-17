@@ -43,7 +43,7 @@
                                         CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
                                 </div>
                                 <div class="form-group">
-                                    <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default btn-login" />
+                                    <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-success btn-login" />
                                 </div>
                                 <section id="socialLoginForm">
                                     <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />

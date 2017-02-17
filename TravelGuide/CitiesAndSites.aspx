@@ -12,6 +12,9 @@
             <div class="col-md-4">
                 <asp:TextBox runat="server" ID="SearchBarDiscover" />
             </div>
+            <div class="col-md-4 text-right">
+                <asp:HyperLink NavigateUrl="~/AddArticle.aspx" CssClass="btn btn-success" Text="Add new article" runat="server" />
+            </div>
         </div>
         <asp:ListView runat="server" ID="ListViewDestinations"
             ItemType="TravelGuide.Models.Articles.Article">
@@ -41,7 +44,7 @@
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="false"
                         ShowNextPageButton="false" ShowPreviousPageButton="true" PreviousPageText="<" ButtonCssClass="btn-page" />
-                    <asp:NumericPagerField NumericButtonCssClass="btn-page"  CurrentPageLabelCssClass="btn-page btn-page-active"/>
+                    <asp:NumericPagerField NumericButtonCssClass="btn-page" CurrentPageLabelCssClass="btn-page btn-page-active" />
                     <asp:NextPreviousPagerField ShowLastPageButton="false"
                         ShowNextPageButton="true" ShowPreviousPageButton="false" NextPageText=">" ButtonCssClass="btn-page" />
                 </Fields>

@@ -23,7 +23,7 @@
                                             Display="Dynamic" CssClass="text-danger" ErrorMessage="Username is required" />
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button runat="server" Text="Sing in" CssClass="btn btn-default btn-login" OnClick="LogIn_Click" />
+                                        <asp:Button runat="server" Text="Sing in" CssClass="btn btn-success btn-login" OnClick="LogIn_Click" />
                                     </div>
                                 </div>
                             </asp:PlaceHolder>
