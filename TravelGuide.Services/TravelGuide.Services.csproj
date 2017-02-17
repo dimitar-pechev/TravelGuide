@@ -78,8 +78,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articles\ArticleService.cs" />
-    <Compile Include="Contracts\IArticleService.cs" />
-    <Compile Include="Contracts\ICommentService.cs" />
+    <Compile Include="Articles\Contracts\IArticleService.cs" />
+    <Compile Include="Articles\Contracts\ICommentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
