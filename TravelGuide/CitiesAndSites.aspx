@@ -13,6 +13,39 @@
                 <asp:TextBox runat="server" ID="SearchBarDiscover" />
             </div>
         </div>
+        <asp:ListView runat="server" ID="ListViewDestinations"
+            ItemType="TravelGuide.Models.Articles.Article">
+            <ItemTemplate>
+                <div class="card destination-card">
+                    <div class="card-content col-md-3 card-destinations-image">
+                        <asp:Image ImageUrl="<%#: BindItem.ImageUrl %>" runat="server" ID="DestinationImage" />
+                    </div>
+                    <div class="card-content col-md-9 card-destinations-entry">
+                        <asp:Label Text="<%#: BindItem.City %>" runat="server" ID="DestinationCity" CssClass="destinations-entry-city" />, 
+                        <asp:Label Text="<%#: BindItem.Country %>" runat="server" ID="DestinationCountry" CssClass="destinations-entry-city" />
+                        <br />
+                        <asp:Label Text="<%#: BindItem.Title %>" runat="server" ID="DestinationTitle" CssClass="destinations-entry-title" />
+                        <br />
+                        <span class="destinations-entry-date">Posted on:
+                            <asp:Label Text="<%#: BindItem.CreatedOn %>" runat="server" ID="DestinationDate" /></span>
+                        <br />
+                        <asp:Label Text="<%#: BindItem.Content %>" CssClass="destinations-entry-content" runat="server" ID="DestinationUser" />
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:ListView>
+        <div class="text-center">
+            <asp:DataPager ID="DataPagerDestinations" runat="server"
+                PagedControlID="ListViewDestinations" PageSize="1"
+                QueryStringField="page">
+                <Fields>
+                    <asp:NextPreviousPagerField ShowFirstPageButton="false"
+                        ShowNextPageButton="false" ShowPreviousPageButton="true" PreviousPageText="<" ButtonCssClass="btn-page" />
+                    <asp:NumericPagerField NumericButtonCssClass="btn-page"  CurrentPageLabelCssClass="btn-page btn-page-active"/>
+                    <asp:NextPreviousPagerField ShowLastPageButton="false"
+                        ShowNextPageButton="true" ShowPreviousPageButton="false" NextPageText=">" ButtonCssClass="btn-page" />
+                </Fields>
+            </asp:DataPager>
+        </div>
     </div>
-    <hr />
 </asp:Content>
