@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TravelGuide.Auth;
+using TravelGuide.Models;
 
 namespace TravelGuide.Account
 {

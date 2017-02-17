@@ -3,6 +3,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using TravelGuide.Models;
 
 namespace TravelGuide.Auth
 {
