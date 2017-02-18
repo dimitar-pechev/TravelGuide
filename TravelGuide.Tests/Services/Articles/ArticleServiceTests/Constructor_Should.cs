@@ -18,7 +18,8 @@ namespace TravelGuide.Tests.Services.Articles.ArticleServiceTests
             var factoryMock = new Mock<IArticleFactory>();
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new ArticleService(null, factoryMock.Object));
+            var ex = Assert.Throws<ArgumentNullException>(() => new ArticleService(null, factoryMock.Object));
+            StringAssert.Contains("DdContext", ex.Message);
         }
 
         [Test]
@@ -28,7 +29,8 @@ namespace TravelGuide.Tests.Services.Articles.ArticleServiceTests
             var contextMock = new Mock<ITravelGuideContext>();
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new ArticleService(contextMock.Object, null));
+            var ex = Assert.Throws<ArgumentNullException>(() => new ArticleService(contextMock.Object, null));
+            StringAssert.Contains("factory", ex.Message);
         }
 
         [Test]
@@ -70,7 +72,7 @@ namespace TravelGuide.Tests.Services.Articles.ArticleServiceTests
             var service = new ExtendedArticleService(contextMock.Object, factoryMock.Object);
 
             // Assert
-            Assert.AreSame(factoryMock.Object, service.ArticleFactory); 
+            Assert.AreSame(factoryMock.Object, service.ArticleFactory);
         }
     }
 }
