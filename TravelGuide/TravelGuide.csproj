@@ -204,6 +204,11 @@
     <Content Include="Images\boka-kotorska-1920x890.jpg" />
     <Content Include="Images\destinations-heading.png" />
     <Content Include="Images\fb-art.png" />
+    <Content Include="Images\IconsSocial\1487474216_facebook.png" />
+    <Content Include="Images\IconsSocial\1487474227_linkedin.png" />
+    <Content Include="Images\IconsSocial\1487474240_youtube.png" />
+    <Content Include="Images\IconsSocial\1487474244_google.png" />
+    <Content Include="Images\IconsSocial\1487474262_twitter2.png" />
     <Content Include="Images\logo-transparent.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

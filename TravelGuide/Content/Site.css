@@ -12,7 +12,7 @@ body {
 
 
 #main {
-    min-height: 627px;
+    min-height: 622px;
 }
 
 .logo {
@@ -20,9 +20,15 @@ body {
 }
 
 .footer {
-    min-height: 46px;
+    padding-top: 0.5%;
+    min-height: 50px;
     z-index: 9999;
 }
+
+    .footer div {
+        margin: 0;
+    }
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -263,4 +269,12 @@ body {
 .modal-dialog {
     width: auto;
     max-width: 70%;
+}
+
+.icon-social img {
+    max-width: 35px;
+}
+
+.icon-social {
+    margin-left: 3%;
 }
