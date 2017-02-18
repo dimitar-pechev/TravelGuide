@@ -236,13 +236,31 @@ body {
 }
 
 .article-text {
-    padding: 30px;
+    padding: 0 30px;
     text-align: justify;
 }
 
-.thumb-photo {
+.thumb-photo-left {
     float: left;
     width: 33%;
     margin-right: 20px;
     margin-bottom: 0;
+    cursor: pointer;
+}
+
+.thumb-photo-right {
+    float: right;
+    width: 33%;
+    margin-left: 20px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.thumb-photo:hover {
+    box-shadow: 0 0 20px grey;
+}
+
+.modal-dialog {
+    width: auto;
+    max-width: 70%;
 }
