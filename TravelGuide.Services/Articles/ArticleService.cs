@@ -29,7 +29,9 @@ namespace TravelGuide.Services.Articles
             this.articleFactory = articleFactory;
         }
 
-        public void CreateArticle(string username, string title, string city, string country, string content, string imageUrl)
+        public void CreateArticle(string username, string title, string city, string country, string contentMain,
+            string contentMustSee, string contentBudgetTips, string contentAccomodation,
+            string primaryImageUrl, string secondImageUrl, string thirdImageUrl, string coverImageUrl)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(username.Trim()))
             {
@@ -47,11 +49,11 @@ namespace TravelGuide.Services.Articles
             {
                 throw new ArgumentException("Country name cannot be null, shorter than 2 symbols or greater than 30!");
             }
-            if (string.IsNullOrEmpty(content) || string.IsNullOrEmpty(content.Trim()) || content.Length < 50 || content.Length > 5000)
+            if (string.IsNullOrEmpty(contentMain) || string.IsNullOrEmpty(contentMain.Trim()) || contentMain.Length < 50 || contentMain.Length > 5000)
             {
                 throw new ArgumentException("Content cannot be null, shorter than 50 symbols or greater than 5000!");
             }
-            if (string.IsNullOrEmpty(imageUrl) || string.IsNullOrEmpty(imageUrl.Trim()))
+            if (string.IsNullOrEmpty(primaryImageUrl) || string.IsNullOrEmpty(primaryImageUrl.Trim()))
             {
                 throw new ArgumentNullException("ImageUrl cannot be null!");
             }
@@ -62,7 +64,8 @@ namespace TravelGuide.Services.Articles
                 throw new InvalidOperationException("Only logged in users can create articles!");
             }
 
-            var article = this.articleFactory.CreateArticle(user, Guid.Parse(user.Id), title, city, country, content, imageUrl);
+            var article = this.articleFactory.CreateArticle(user, Guid.Parse(user.Id), title, city, country, contentMain,
+                contentMustSee, contentBudgetTips, contentAccomodation, primaryImageUrl, secondImageUrl, thirdImageUrl, coverImageUrl);
 
             this.context.Articles.Add(article);
             this.context.SaveChanges();
@@ -94,6 +97,15 @@ namespace TravelGuide.Services.Articles
         public IEnumerable<Article> GetAllArticles()
         {
             return this.context.Articles.ToList();
+        }
+
+        public IEnumerable<Article> GetAllNotDeletedArticlesOrderedByDate()
+        {
+            return this.context
+                .Articles
+                .Where(x => !x.IsDeleted)
+                .OrderByDescending(x => x.CreatedOn)
+                .ToList();
         }
 
         public Article GetArticleById(Guid id)

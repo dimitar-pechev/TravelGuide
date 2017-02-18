@@ -22,7 +22,7 @@ namespace TravelGuide
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var articles = this.articleService.GetAllArticles();
+            var articles = this.articleService.GetAllNotDeletedArticlesOrderedByDate();
             this.ListViewDestinations.DataSource = articles;
             this.ListViewDestinations.DataBind();
         }

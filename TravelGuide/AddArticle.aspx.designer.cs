@@ -49,13 +49,67 @@ namespace TravelGuide {
         protected global::System.Web.UI.WebControls.TextBox ArticleImageUrl;
         
         /// <summary>
-        /// ArticleContent control.
+        /// SecondPictureUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContent;
+        protected global::System.Web.UI.WebControls.TextBox SecondPictureUrl;
+        
+        /// <summary>
+        /// ThirdPictureUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ThirdPictureUrl;
+        
+        /// <summary>
+        /// CoverPictureUrl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CoverPictureUrl;
+        
+        /// <summary>
+        /// ArticleContentMain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContentMain;
+        
+        /// <summary>
+        /// ArticleContentMustSee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContentMustSee;
+        
+        /// <summary>
+        /// ArticleContentBudgetTips control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContentBudgetTips;
+        
+        /// <summary>
+        /// ArticleContentAccomodation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContentAccomodation;
         
         /// <summary>
         /// BtnSubmitNewArticle control.

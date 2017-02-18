@@ -19,27 +19,29 @@
         <asp:ListView runat="server" ID="ListViewDestinations"
             ItemType="TravelGuide.Models.Articles.Article">
             <ItemTemplate>
-                <div class="card destination-card">
-                    <div class="card-content col-md-3 card-destinations-image">
-                        <asp:Image ImageUrl="<%#: BindItem.ImageUrl %>" runat="server" ID="DestinationImage" />
-                    </div>
-                    <div class="card-content col-md-9 card-destinations-entry">
-                        <asp:Label Text="<%#: BindItem.City %>" runat="server" ID="DestinationCity" CssClass="destinations-entry-city" />, 
+                <asp:HyperLink NavigateUrl='<%# string.Format("~/destinationdetails.aspx?id={0}", Item.Id) %>' runat="server">
+                    <div class="card destination-card">
+                        <div class="card-content col-md-3 card-destinations-image">
+                            <asp:Image ImageUrl="<%#: BindItem.PrimaryImageUrl %>" runat="server" ID="DestinationImage" />
+                        </div>
+                        <div class="card-content col-md-9 card-destinations-entry">
+                            <asp:Label Text="<%#: BindItem.City %>" runat="server" ID="DestinationCity" CssClass="destinations-entry-city" />, 
                         <asp:Label Text="<%#: BindItem.Country %>" runat="server" ID="DestinationCountry" CssClass="destinations-entry-city" />
-                        <br />
-                        <asp:Label Text="<%#: BindItem.Title %>" runat="server" ID="DestinationTitle" CssClass="destinations-entry-title" />
-                        <br />
-                        <span class="destinations-entry-date">Posted on:
+                            <br />
+                            <asp:Label Text="<%#: BindItem.Title %>" runat="server" ID="DestinationTitle" CssClass="destinations-entry-title" />
+                            <br />
+                            <span class="destinations-entry-date">Posted on:
                             <asp:Label Text="<%#: BindItem.CreatedOn %>" runat="server" ID="DestinationDate" /></span>
-                        <br />
-                        <asp:Label Text="<%#: BindItem.Content %>" CssClass="destinations-entry-content" runat="server" ID="DestinationUser" />
+                            <br />
+                            <asp:Label Text="<%#: BindItem.ContentMain %>" CssClass="destinations-entry-content" runat="server" ID="DestinationUser" />
+                        </div>
                     </div>
-                </div>
+                </asp:HyperLink>
             </ItemTemplate>
         </asp:ListView>
         <div class="text-center">
             <asp:DataPager ID="DataPagerDestinations" runat="server"
-                PagedControlID="ListViewDestinations" PageSize="1"
+                PagedControlID="ListViewDestinations" PageSize="4"
                 QueryStringField="page">
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="false"

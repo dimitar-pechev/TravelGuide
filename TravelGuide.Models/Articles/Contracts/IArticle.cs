@@ -15,13 +15,25 @@ namespace TravelGuide.Models.Articles.Contracts
 
         DateTime CreatedOn { get; set; }
 
-        string Content { get; set; }
+        string ContentMain { get; set; }
+
+        string ContentMustSee { get; set; }
+
+        string ContentBudgetTips { get; set; }
+
+        string ContentAccomodation { get; set; }
 
         string Country { get; set; }
 
         string City { get; set; }
 
-        string ImageUrl { get; set; }
+        string PrimaryImageUrl { get; set; }
+
+        string SecondImageUrl { get; set; }
+
+        string ThirdImageUrl { get; set; }
+
+        string CoverImageUrl { get; set; }
 
         bool IsDeleted { get; set; }
 

@@ -30,10 +30,17 @@ namespace TravelGuide
             var title = this.ArticleTitle.Text;
             var city = this.ArticleCity.Text;
             var country = this.ArticleCountry.Text;
-            var content = this.ArticleContent.Value;
-            var imageUrl = this.ArticleImageUrl.Text;
+            var contentMain = this.ArticleContentMain.Value;
+            var contentMustSee = this.ArticleContentMustSee.Value;
+            var contentTips = this.ArticleContentBudgetTips.Value;
+            var contentAccomodation = this.ArticleContentAccomodation.Value;
+            var primaryImageUrl = this.ArticleImageUrl.Text;
+            var secondImageUrl = this.SecondPictureUrl.Text;
+            var thirdImageUrl = this.ThirdPictureUrl.Text;
+            var coverImageUrl = this.CoverPictureUrl.Text;
 
-            this.articleService.CreateArticle(username, title, city, country, content, imageUrl);
+            this.articleService.CreateArticle(username, title, city, country, contentMain, contentMustSee, contentTips,
+                contentAccomodation, primaryImageUrl, secondImageUrl, thirdImageUrl, coverImageUrl);
             this.Response.Redirect("~/CitiesAndSites.aspx");
         }
     }

@@ -8,9 +8,13 @@ namespace TravelGuide.Services.Contracts
     {
         IEnumerable<Article> GetAllArticles();
 
+        IEnumerable<Article> GetAllNotDeletedArticlesOrderedByDate();
+
         Article GetArticleById(Guid id);
 
-        void CreateArticle(string username, string title, string city, string country, string content, string imageUrl);
+        void CreateArticle(string username, string title, string city, string country, string contentMain,
+            string contentMustSee, string contentBudgetTips, string contentAccomodation,
+            string primaryImageUrl, string secondImageUrl, string thirdImageUrl, string coverImageUrl);
 
         void EditArticle(Article article);
 
