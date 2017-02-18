@@ -10,8 +10,8 @@ namespace TravelGuide.Services.Articles
 {
     public class ArticleService : IArticleService
     {
-        private readonly ITravelGuideContext context;
-        private readonly IArticleFactory articleFactory;
+        protected readonly ITravelGuideContext context;
+        protected readonly IArticleFactory articleFactory;
 
         public ArticleService(ITravelGuideContext context, IArticleFactory articleFactory)
         {
