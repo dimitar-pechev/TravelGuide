@@ -4,21 +4,29 @@ using System.Linq;
 using TravelGuide.Data;
 using TravelGuide.Models.Articles;
 using TravelGuide.Services.Contracts;
+using TravelGuide.Services.Factories;
 
 namespace TravelGuide.Services.Articles
 {
     public class ArticleService : IArticleService
     {
         private readonly ITravelGuideContext context;
+        private readonly IArticleFactory articleFactory;
 
-        public ArticleService(ITravelGuideContext context)
+        public ArticleService(ITravelGuideContext context, IArticleFactory articleFactory)
         {
             if (context == null)
             {
                 throw new ArgumentNullException("Passed DdContext cannot be null!");
             }
 
+            if (articleFactory == null)
+            {
+                throw new ArgumentNullException("Passed factory cannot be null!");
+            }
+
             this.context = context;
+            this.articleFactory = articleFactory;
         }
 
         public void CreateArticle(string username, string title, string city, string country, string content, string imageUrl)
@@ -27,21 +35,21 @@ namespace TravelGuide.Services.Articles
             {
                 throw new ArgumentNullException("Username cannot be null!");
             }
-            if (string.IsNullOrEmpty(title.Trim()))
+            if (string.IsNullOrEmpty(title.Trim()) || title.Length < 2 || title.Length > 30)
             {
-                throw new ArgumentNullException("Title cannot be null!");
+                throw new ArgumentNullException("Title cannot be null, shorter than 2 symbols or greater than 30!");
             }
-            if (string.IsNullOrEmpty(city.Trim()))
+            if (string.IsNullOrEmpty(city.Trim()) || city.Length < 2 || city.Length > 30)
             {
-                throw new ArgumentNullException("City name cannot be null!");
+                throw new ArgumentNullException("City name cannot be null, shorter than 2 symbols or greater than 30!");
             }
-            if (string.IsNullOrEmpty(country.Trim()))
+            if (string.IsNullOrEmpty(country.Trim()) || country.Length < 2 || country.Length > 30)
             {
-                throw new ArgumentNullException("Country name cannot be null!");
+                throw new ArgumentNullException("Country name cannot be null, shorter than 2 symbols or greater than 30!");
             }
-            if (string.IsNullOrEmpty(content.Trim()))
+            if (string.IsNullOrEmpty(content.Trim()) || content.Length < 50 || content.Length > 5000)
             {
-                throw new ArgumentNullException("Content cannot be null!");
+                throw new ArgumentNullException("Content cannot be null, shorter than 50 symbols or greater than 5000!");
             }
             if (string.IsNullOrEmpty(imageUrl.Trim()))
             {
@@ -54,16 +62,7 @@ namespace TravelGuide.Services.Articles
                 throw new InvalidOperationException("Only logged in users can create articles!");
             }
 
-            var article = new Article()
-            {
-                Title = title,
-                Country = country,
-                City = city,
-                Content = content,
-                User = user,
-                UserId = Guid.Parse(user.Id),
-                ImageUrl = imageUrl
-            };
+            var article = this.articleFactory.CreateArticle(user, Guid.Parse(user.Id), title, city, country, content, imageUrl);
 
             this.context.Articles.Add(article);
             this.context.SaveChanges();

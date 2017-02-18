@@ -1,17 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using TravelGuide.Models.Articles.Contracts;
 
 namespace TravelGuide.Models.Articles
 {
-    public class Article
+    public class Article : IArticle
     {
-        public Article()
+        protected Article()
         {
             this.Id = Guid.NewGuid();
             this.CreatedOn = DateTime.Now;
             this.Comments = new HashSet<ArticleComment>();
             this.Likes = new HashSet<ArticleLike>();
             this.IsDeleted = false;
+        }
+
+        public Article(User user, Guid userId, string title, string city, string country, string content, string imageUrl) 
+            : this()
+        {
+            this.User = user;
+            this.UserId = userId;
+            this.Title = title;
+            this.City = city;
+            this.Country = country;
+            this.Content = content;
+            this.ImageUrl = imageUrl;
         }
 
         public Guid Id { get; set; }

@@ -80,6 +80,7 @@
     <Compile Include="Articles\ArticleService.cs" />
     <Compile Include="Articles\Contracts\IArticleService.cs" />
     <Compile Include="Articles\Contracts\ICommentService.cs" />
+    <Compile Include="Factories\IArticleFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,8 @@ namespace TravelGuide.App_Start
     using Data;
     using Services.Contracts;
     using Services.Articles;
+    using Ninject.Extensions.Factory;
+    using Services.Factories;
 
     public static class NinjectWebCommon 
     {
@@ -69,6 +71,7 @@ namespace TravelGuide.App_Start
             kernel.Bind<ITravelGuideContext>().To<TravelGuideContext>().InRequestScope();
 
             kernel.Bind<IArticleService>().To<ArticleService>();
+            kernel.Bind<IArticleFactory>().ToFactory();
         }        
     }
 }
