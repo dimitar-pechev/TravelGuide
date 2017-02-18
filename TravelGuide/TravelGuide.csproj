@@ -188,19 +188,20 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
-    <Content Include="AddArticle.aspx" />
-    <Content Include="CitiesAndSites.aspx" />
+    <Content Include="Articles\AddArticle.aspx" />
+    <Content Include="Articles\CitiesAndSites.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\mdb.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DestinationDetails.aspx" />
+    <Content Include="Articles\DestinationDetails.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Gallery\AllPictures.aspx" />
     <Content Include="Images\boka-kotorska-1920x890.jpg" />
     <Content Include="Images\destinations-heading.png" />
     <Content Include="Images\fb-art.png" />
@@ -308,22 +309,22 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddArticle.aspx.cs">
+    <Compile Include="Articles\AddArticle.aspx.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddArticle.aspx.designer.cs">
+    <Compile Include="Articles\AddArticle.aspx.designer.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="CitiesAndSites.aspx.cs">
+    <Compile Include="Articles\CitiesAndSites.aspx.cs">
       <DependentUpon>CitiesAndSites.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CitiesAndSites.aspx.designer.cs">
+    <Compile Include="Articles\CitiesAndSites.aspx.designer.cs">
       <DependentUpon>CitiesAndSites.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
@@ -333,12 +334,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DestinationDetails.aspx.cs">
+    <Compile Include="Articles\DestinationDetails.aspx.cs">
       <DependentUpon>DestinationDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DestinationDetails.aspx.designer.cs">
+    <Compile Include="Articles\DestinationDetails.aspx.designer.cs">
       <DependentUpon>DestinationDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\AllPictures.aspx.cs">
+      <DependentUpon>AllPictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\AllPictures.aspx.designer.cs">
+      <DependentUpon>AllPictures.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

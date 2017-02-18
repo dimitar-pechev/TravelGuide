@@ -41,7 +41,7 @@ namespace TravelGuide
 
             this.articleService.CreateArticle(username, title, city, country, contentMain, contentMustSee, contentTips,
                 contentAccomodation, primaryImageUrl, secondImageUrl, thirdImageUrl, coverImageUrl);
-            this.Response.Redirect("~/CitiesAndSites.aspx");
+            this.Response.Redirect("~/Articles/CitiesAndSites.aspx");
         }
     }
 }

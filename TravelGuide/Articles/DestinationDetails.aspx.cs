@@ -36,7 +36,7 @@ namespace TravelGuide
             }
             catch (Exception)
             {
-                this.Response.Redirect("~/CitiesAndSites.aspx");
+                this.Response.Redirect("~/Articles/CitiesAndSites.aspx");
             }
         }
 

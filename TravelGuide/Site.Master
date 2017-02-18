@@ -55,7 +55,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" class="waves-effect waves-light" href="~/">Home</a></li>
-                        <li><a runat="server" class="waves-effect waves-light" href="~/CitiesAndSites.aspx">Discover</a></li>
+                        <li><a runat="server" class="waves-effect waves-light" href="~/Articles/CitiesAndSites.aspx">Discover</a></li>
+                        <li><a runat="server" class="waves-effect waves-light" href="~/Gallery/AllPictures.aspx">Gallery</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
