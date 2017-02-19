@@ -201,10 +201,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Gallery\AllPictures.aspx" />
+    <Content Include="Gallery\AllPhotos.aspx" />
     <Content Include="Images\boka-kotorska-1920x890.jpg" />
     <Content Include="Images\destinations-heading.png" />
     <Content Include="Images\fb-art.png" />
+    <Content Include="Images\gallery-cover.png" />
     <Content Include="Images\IconsSocial\1487474216_facebook.png" />
     <Content Include="Images\IconsSocial\1487474227_linkedin.png" />
     <Content Include="Images\IconsSocial\1487474240_youtube.png" />
@@ -341,12 +342,12 @@
     <Compile Include="Articles\DestinationDetails.aspx.designer.cs">
       <DependentUpon>DestinationDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Gallery\AllPictures.aspx.cs">
-      <DependentUpon>AllPictures.aspx</DependentUpon>
+    <Compile Include="Gallery\AllPhotos.aspx.cs">
+      <DependentUpon>AllPhotos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Gallery\AllPictures.aspx.designer.cs">
-      <DependentUpon>AllPictures.aspx</DependentUpon>
+    <Compile Include="Gallery\AllPhotos.aspx.designer.cs">
+      <DependentUpon>AllPhotos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

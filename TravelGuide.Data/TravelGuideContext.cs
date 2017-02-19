@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using TravelGuide.Models;
 using TravelGuide.Models.Articles;
+using TravelGuide.Models.Gallery;
 
 namespace TravelGuide.Data
 {
@@ -15,6 +16,8 @@ namespace TravelGuide.Data
         public IDbSet<Article> Articles { get; set; }
 
         public IDbSet<ArticleComment> Comments { get; set; }
+
+        public IDbSet<GalleryImage> GalleryImages { get; set; }
                 
         public new void SaveChanges()
         {
