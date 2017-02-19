@@ -95,5 +95,16 @@ namespace TravelGuide.Services.GalleryImages
             image.IsDeleted = true;
             this.context.SaveChanges();
         }
+
+        public void AddNewImage(string username, string title, string imageUrl)
+        {
+            var userId = Guid.Parse(this.context.Users.FirstOrDefault(x => x.UserName == username).Id);
+            var user = this.context.Users.FirstOrDefault(x => x.UserName == username);
+
+            var image = this.imageFactory.CreateGalleryImage(title, imageUrl, userId, user);
+
+            this.context.GalleryImages.Add(image);
+            this.context.SaveChanges();
+        }
     }
 }

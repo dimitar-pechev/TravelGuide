@@ -335,3 +335,8 @@ body {
 .footer-comment {
     text-align: center !important;
 }
+
+.button-row {
+    margin-top: -5%;
+    padding: 2%;
+}

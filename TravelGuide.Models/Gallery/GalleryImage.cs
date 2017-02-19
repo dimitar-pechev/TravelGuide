@@ -14,12 +14,13 @@ namespace TravelGuide.Models.Gallery
             this.Likes = new HashSet<GalleryLike>();
         }
 
-        public GalleryImage(string title, string imageUrl, Guid userId)
+        public GalleryImage(string title, string imageUrl, Guid userId, User user)
             : this()
         {
             this.Title = title;
             this.ImageUrl = imageUrl;
             this.UserId = userId;
+            this.User = user;
         }
 
         public Guid Id { get; set; }

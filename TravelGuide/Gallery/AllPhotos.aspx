@@ -7,6 +7,9 @@
     </div>
     <div class="container gallery-container">
         <div class="row">
+            <div class="row text-right button-row">
+                <asp:HyperLink NavigateUrl="~/Gallery/AddPhoto.aspx" CssClass="btn btn-success" Text="Add new photo" runat="server" />
+            </div>
             <asp:ListView runat="server" ID="ListViewGalleryItem" DataKeyNames="Id"
                 ItemType="TravelGuide.Models.Gallery.GalleryImage">
                 <ItemTemplate>

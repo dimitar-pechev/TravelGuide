@@ -201,6 +201,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Gallery\AddPhoto.aspx" />
     <Content Include="Gallery\AllPhotos.aspx" />
     <Content Include="Gallery\Details.aspx" />
     <Content Include="Images\boka-kotorska-1920x890.jpg" />
@@ -342,6 +343,13 @@
     </Compile>
     <Compile Include="Articles\DestinationDetails.aspx.designer.cs">
       <DependentUpon>DestinationDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\AddPhoto.aspx.cs">
+      <DependentUpon>AddPhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\AddPhoto.aspx.designer.cs">
+      <DependentUpon>AddPhoto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gallery\AllPhotos.aspx.cs">
       <DependentUpon>AllPhotos.aspx</DependentUpon>
