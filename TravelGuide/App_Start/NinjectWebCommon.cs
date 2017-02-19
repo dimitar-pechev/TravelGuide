@@ -17,6 +17,8 @@ namespace TravelGuide.App_Start
     using Services.Factories;
     using Services.GalleryImages.Contracts;
     using Services.GalleryImages;
+    using Services.Store;
+    using Services.Store.Contracts;
 
     public static class NinjectWebCommon 
     {
@@ -74,7 +76,8 @@ namespace TravelGuide.App_Start
 
             kernel.Bind<IArticleService>().To<ArticleService>();
             kernel.Bind<IGalleryImageService>().To<GalleryImageService>();
-            
+            kernel.Bind<IStoreService>().To<StoreService>();
+
             kernel.Bind<IArticleFactory>().ToFactory();
             kernel.Bind<IGalleryImageFactory>().ToFactory();
             kernel.Bind<IGalleryLikeFactory>().ToFactory();

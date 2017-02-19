@@ -83,6 +83,7 @@
     <Compile Include="Gallery\GalleryImage.cs" />
     <Compile Include="Gallery\GalleryComment.cs" />
     <Compile Include="Gallery\GalleryLike.cs" />
+    <Compile Include="Store\StoreItem.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Articles\Article.cs" />
     <Compile Include="Articles\ArticleComment.cs" />

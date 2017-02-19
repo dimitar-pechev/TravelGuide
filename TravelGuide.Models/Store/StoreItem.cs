@@ -12,9 +12,15 @@ namespace TravelGuide.Models.Store
             this.InStock = true;
         }
 
-        public StoreItem(string itemName, string description, string destFor, string imageUrl, string brand)
+        public StoreItem(string itemName, string description, string destFor, string imageUrl, string brand, double price)
             : this()
         {
+            this.ItemName = itemName;
+            this.Description = description;
+            this.DestinationFor = destFor;
+            this.ImageUrl = imageUrl;
+            this.Brand = brand;
+            this.Price = price;
         }
 
         public Guid Id { get; set; }
@@ -28,6 +34,8 @@ namespace TravelGuide.Models.Store
         public string ImageUrl { get; set; }
 
         public string Brand { get; set; }
+
+        public double Price { get; set; }
 
         public bool InStock { get; set; }
 

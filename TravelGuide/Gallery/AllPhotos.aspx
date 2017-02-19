@@ -16,7 +16,7 @@
                     <div class="col-md-4">
                         <asp:HyperLink NavigateUrl='<%#: string.Format("~/Gallery/Details.aspx?id={0}", Item.Id) %>' runat="server">
                             <div class="card gallery-item" runat="server">
-                                <div class="card-content">
+                                <div class="card-content"> 
                                     <asp:Image ImageUrl="<%#: Item.ImageUrl %>" ID="ImageUrl" runat="server" CssClass="img-responsive gallery-image-image" />
                                 </div>
                                 <div class="card-content gallery-image-footer">
