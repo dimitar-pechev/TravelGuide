@@ -13,39 +13,75 @@ namespace TravelGuide.Gallery {
     public partial class Details {
         
         /// <summary>
-        /// BtnLikeImage control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLikeImage;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// BtnCommentImage control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCommentImage;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// BtnDeleteImage control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnDeleteImage;
+        protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
-        /// ListViewComments control.
+        /// CommentsPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewComments;
+        protected global::System.Web.UI.WebControls.Panel CommentsPanel;
+        
+        /// <summary>
+        /// ListViewGalleryComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListViewGalleryComments;
+        
+        /// <summary>
+        /// BtnRevelCommentModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnRevelCommentModal;
+        
+        /// <summary>
+        /// NewCommentContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea NewCommentContent;
+        
+        /// <summary>
+        /// BtnSubmitNewComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSubmitNewComment;
     }
 }
