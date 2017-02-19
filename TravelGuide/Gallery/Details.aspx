@@ -30,7 +30,7 @@
                     <asp:ListView runat="server" ID="ListViewGalleryComments"
                         ItemType="TravelGuide.Models.Gallery.GalleryComment">
                         <LayoutTemplate>
-                            <asp:PlaceHolder runat="server" ID="itemPlacehodler" />
+                            <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
                         </LayoutTemplate>
                         <EmptyDataTemplate>
                             <div class="row">
@@ -43,8 +43,11 @@
                                     <p class="text-center">
                                         <asp:Label Text='<%#: Item.Content %>' runat="server" />
                                     </p>
-                                    <asp:Label Text='<%#: Item.User.UserName %>' runat="server" />
-                                    <asp:Label Text='<%#: Item.CreatedOn %>' runat="server" />
+                                    <div class="text-right">
+                                        <asp:Label Text='<%#: Item.User.UserName %>' runat="server" />
+                                        <br />
+                                        <asp:Label Text='<%#: Item.CreatedOn %>' runat="server" />
+                                    </div>
                                 </div>
                             </div>
                         </ItemTemplate>

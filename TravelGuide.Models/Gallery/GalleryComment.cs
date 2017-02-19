@@ -9,10 +9,11 @@ namespace TravelGuide.Models.Gallery
         {
         }
 
-        public GalleryComment(Guid userId, string content, Guid imageId)
+        public GalleryComment(Guid userId, User user, string content, Guid imageId)
             : base()
         {
             this.UserId = userId;
+            this.User = user;
             this.Content = content;
             this.GalleryImageId = imageId;
         }

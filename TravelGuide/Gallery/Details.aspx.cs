@@ -28,6 +28,7 @@ namespace TravelGuide.Gallery
             {
                 var id = GetGuidFromString(this.Request.QueryString["id"]);
                 this.Image = this.service.GetGalleryImageById(id);
+                this.ListViewGalleryComments.DataSource = Image.Comments;
                 this.DataBind();
             }
             catch (Exception)
@@ -35,7 +36,7 @@ namespace TravelGuide.Gallery
                 this.Response.Redirect("~/Gallery/AllPhotos.aspx");
             }
         }
-
+        
         private Guid GetGuidFromString(string str)
         {
             var id = Guid.Parse(str);
@@ -55,13 +56,14 @@ namespace TravelGuide.Gallery
                 this.CommentsPanel.Visible = false;
                 return;
             }
-
+            
             this.CommentsPanel.Visible = true;
         }
 
         protected void BtnDeleteImage_Click(object sender, EventArgs e)
         {
-
+            this.service.DeleteImage(this.Image);
+            this.Response.Redirect("~/Gallery/AllPhotos.aspx");
         }
 
         protected void BtnSubmitNewComment_Click(object sender, EventArgs e)

@@ -28,7 +28,8 @@ namespace TravelGuide.Services.GalleryImages
         public void AddComment(string username, string content, Guid imageId)
         {
             var userId = Guid.Parse(this.context.Users.FirstOrDefault(x => x.UserName == username).Id);
-            var comment = this.commentFactory.CreateGalleryComment(userId, content, imageId);
+            var user = this.context.Users.FirstOrDefault(x => x.UserName == username);
+            var comment = this.commentFactory.CreateGalleryComment(userId, user, content, imageId);
             var image = this.GetGalleryImageById(imageId);
             image.Comments.Add(comment);
             this.context.SaveChanges();
@@ -87,6 +88,12 @@ namespace TravelGuide.Services.GalleryImages
 
             var image = this.GetAllNotDeletedGalleryImagesOrderedByDate().FirstOrDefault(x => x.Id == id);
             return image;
+        }
+
+        public void DeleteImage(GalleryImage image)
+        {
+            image.IsDeleted = true;
+            this.context.SaveChanges();
         }
     }
 }

@@ -15,5 +15,7 @@ namespace TravelGuide.Services.GalleryImages.Contracts
         void ToggleLike(string username, Guid imageId);
 
         void AddComment(string username, string content, Guid imageId);
+
+        void DeleteImage(GalleryImage image);
     }
 }
