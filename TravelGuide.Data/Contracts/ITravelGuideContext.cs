@@ -2,6 +2,7 @@
 using TravelGuide.Models;
 using TravelGuide.Models.Articles;
 using TravelGuide.Models.Gallery;
+using TravelGuide.Models.Store;
 
 namespace TravelGuide.Data
 {
@@ -16,6 +17,8 @@ namespace TravelGuide.Data
         IDbSet<GalleryComment> GalleryComments { get; set; }
 
         IDbSet<GalleryLike> GalleryLikes { get; set; }
+
+        IDbSet<StoreItem> StoreItems { get; set; }
 
         IDbSet<User> Users { get; }
 

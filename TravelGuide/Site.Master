@@ -57,6 +57,7 @@
                         <li><a runat="server" class="waves-effect waves-light" href="~/">Home</a></li>
                         <li><a runat="server" class="waves-effect waves-light" href="~/Articles/CitiesAndSites.aspx">Discover</a></li>
                         <li><a runat="server" class="waves-effect waves-light" href="~/Gallery/AllPhotos.aspx">Gallery</a></li>
+                        <li><a runat="server" class="waves-effect waves-light" href="~/Store/AllItems.aspx">Store</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
