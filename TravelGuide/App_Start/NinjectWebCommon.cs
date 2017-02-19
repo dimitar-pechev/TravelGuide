@@ -79,6 +79,7 @@ namespace TravelGuide.App_Start
             kernel.Bind<IGalleryImageFactory>().ToFactory();
             kernel.Bind<IGalleryLikeFactory>().ToFactory();
             kernel.Bind<IGalleryCommentFactory>().ToFactory();
+            kernel.Bind<IStoreItemFactory>().ToFactory();
         }        
     }
 }
