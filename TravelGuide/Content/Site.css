@@ -373,3 +373,20 @@ body {
 .form-add {
     padding: 3% 10% !important;
 }
+
+.item-details-image {
+    width: 100%;
+}
+
+.item-description {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.item-second-col {
+    border-right: 3px solid black;
+}
+
+.hr {
+    margin-top: 0;
+}
