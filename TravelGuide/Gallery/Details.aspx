@@ -54,7 +54,6 @@
                             data-toggle="modal" data-target="#comment-box" runat="server" />
                     </div>
                 </asp:Panel>
-
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>

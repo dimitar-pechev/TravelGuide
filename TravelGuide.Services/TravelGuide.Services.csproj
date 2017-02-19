@@ -82,6 +82,7 @@
     <Compile Include="Articles\Contracts\ICommentService.cs" />
     <Compile Include="Factories\IArticleFactory.cs" />
     <Compile Include="Factories\IGalleryImageFactory.cs" />
+    <Compile Include="Factories\IGalleryLikeFactory.cs" />
     <Compile Include="GalleryImages\Contracts\IGalleryImageService.cs" />
     <Compile Include="GalleryImages\GalleryImageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

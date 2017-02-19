@@ -11,5 +11,7 @@ namespace TravelGuide.Services.GalleryImages.Contracts
         IEnumerable<GalleryImage> GetAllNotDeletedGalleryImagesOrderedByDate();
 
         GalleryImage GetGalleryImageById(Guid id);
+
+        void ToggleLike(string username, Guid imageId);
     }
 }

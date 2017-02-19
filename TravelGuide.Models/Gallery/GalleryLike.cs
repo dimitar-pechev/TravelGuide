@@ -5,7 +5,13 @@ namespace TravelGuide.Models.Gallery
 {
     public class GalleryLike : Like
     {
+        public GalleryLike()
+            : base()
+        {
+        }
+
         public GalleryLike(Guid userId, Guid imageId)
+            : base()
         {
             this.UserId = userId;
             this.GalleryImageId = imageId;

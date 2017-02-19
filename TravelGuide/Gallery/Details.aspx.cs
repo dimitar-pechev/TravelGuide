@@ -44,7 +44,8 @@ namespace TravelGuide.Gallery
 
         protected void BtnLikeImage_Click(object sender, EventArgs e)
         {
-
+            this.service.ToggleLike(this.User.Identity.Name, this.Image.Id);
+            this.DataBind();
         }
 
         protected void BtnCommentImage_Click(object sender, EventArgs e)
