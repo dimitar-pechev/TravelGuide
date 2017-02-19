@@ -11,11 +11,19 @@
                 <div class="col-md-4">
                     <div class="card gallery-item">
                         <div class="card-content">
-                            <asp:Image ImageUrl="<%#: BindItem.ImageUrl %>" ID="ImageUrl" runat="server" CssClass="img-responsive" />
+                            <asp:Image ImageUrl="<%#: BindItem.ImageUrl %>" ID="ImageUrl" runat="server" CssClass="img-responsive gallery-image-image" />
                         </div>
-                        <div class="card-content">
-                            <div>
+                        <div class="card-content gallery-image-footer">
+                            <div class="image-title col-md-9">
                                 <asp:Label Text="<%#: BindItem.Title %>" runat="server" ID="ImageTitle" />
+                            </div>
+                            <div class="image-comments-likes col-md-3">
+                                <div class="col-md-6">
+                                    <span class="glyphicon glyphicon-thumbs-up"></span> <asp:Label Text="<%#: BindItem.Likes.Count %>" runat="server" ID="Likes" />
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="glyphicon glyphicon-comment"></span> <asp:Label Text="<%#: BindItem.Comments.Count %>" runat="server" ID="Comments" />
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TravelGuide.Models.Gallery
 {
@@ -9,15 +10,16 @@ namespace TravelGuide.Models.Gallery
             this.Id = Guid.NewGuid();
             this.CreatedOn = DateTime.Now;
             this.IsDeleted = false;
+            this.Comments = new HashSet<GalleryComment>();
+            this.Likes = new HashSet<GalleryLike>();
         }
 
-        public GalleryImage(string title, string imageUrl, Guid userId, User user)
+        public GalleryImage(string title, string imageUrl, Guid userId)
             : this()
         {
             this.Title = title;
             this.ImageUrl = imageUrl;
             this.UserId = userId;
-            this.User = user;
         }
 
         public Guid Id { get; set; }
@@ -33,5 +35,9 @@ namespace TravelGuide.Models.Gallery
         public DateTime CreatedOn { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public virtual ICollection<GalleryComment> Comments { get; set; }
+
+        public virtual ICollection<GalleryLike> Likes { get; set; }
     }
 }

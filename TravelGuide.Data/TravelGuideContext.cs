@@ -18,7 +18,11 @@ namespace TravelGuide.Data
         public IDbSet<ArticleComment> Comments { get; set; }
 
         public IDbSet<GalleryImage> GalleryImages { get; set; }
-                
+
+        public IDbSet<GalleryComment> GalleryComments { get; set; }
+
+        public IDbSet<GalleryLike> GalleryLikes { get; set; }
+
         public new void SaveChanges()
         {
             base.SaveChanges();

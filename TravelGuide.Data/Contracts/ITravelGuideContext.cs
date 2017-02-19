@@ -13,6 +13,10 @@ namespace TravelGuide.Data
 
         IDbSet<GalleryImage> GalleryImages { get; set; }
 
+        IDbSet<GalleryComment> GalleryComments { get; set; }
+
+        IDbSet<GalleryLike> GalleryLikes { get; set; }
+
         IDbSet<User> Users { get; }
 
         void SaveChanges();

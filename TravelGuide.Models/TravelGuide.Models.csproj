@@ -81,6 +81,8 @@
     <Compile Include="Abstractions\Like.cs" />
     <Compile Include="Articles\Contracts\IArticle.cs" />
     <Compile Include="Gallery\GalleryImage.cs" />
+    <Compile Include="Gallery\GalleryComment.cs" />
+    <Compile Include="Gallery\GalleryLike.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Articles\Article.cs" />
     <Compile Include="Articles\ArticleComment.cs" />

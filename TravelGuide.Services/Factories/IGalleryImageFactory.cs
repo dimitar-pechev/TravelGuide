@@ -6,6 +6,6 @@ namespace TravelGuide.Services.Factories
 {
     public interface IGalleryImageFactory
     {
-        GalleryImage CreateGalleryImage(string title, string imageUrl, Guid userId, User user);
+        GalleryImage CreateGalleryImage(string title, string imageUrl, Guid userId);
     }
 }

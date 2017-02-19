@@ -284,6 +284,24 @@ body {
     margin-left: 0;
 }
 
-.gallery-container{
+.gallery-container {
     background-color: white;
+}
+
+.gallery-item {
+    height: 300px;
+}
+
+.gallery-image-image {
+    height: 200px;
+}
+
+.gallery-container .gallery-item .gallery-image-footer {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.image-comments-likes, .image-comments-likes * {
+    margin: 0;
+    padding: 0;
 }
