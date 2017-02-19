@@ -5,8 +5,8 @@
         <div class="row card-only">
             <div class="col-md-6 col-md-offset-3 text-center">
                 <div class="card">
-                    <div class="card-content">
-                        <h4>Add a New Photos</h4>
+                    <div class="card-content form-add">
+                        <h4>Add a New Photo</h4>
                         <hr />
                         <asp:Label Text="Title" AssociatedControlID="NewImageTitle" runat="server" />
                         <asp:TextBox runat="server" ID="NewImageTitle" />

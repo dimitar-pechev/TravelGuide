@@ -19,11 +19,20 @@ namespace TravelGuide.Services.Store
             this.factory = factory;
         }
 
-        public void AddNewItem(string itemName, string description, string destFor, string imageUrl, string brand, double price)
+        public bool AddNewItem(string itemName, string description, string destFor, string imageUrl, string brand, string price)
         {
-            var item = this.factory.CreateStoreItem(itemName, description, destFor, imageUrl, brand, price);
+            double parsedPrice;
+            var isParsable = double.TryParse(price, out parsedPrice);
+
+            if (!isParsable)
+            {
+                return false;
+            }
+
+            var item = this.factory.CreateStoreItem(itemName, description, destFor, imageUrl, brand, parsedPrice);
             this.context.StoreItems.Add(item);
             this.context.SaveChanges();
+            return true;
         }
 
         public void ChangeStatus(StoreItem item)

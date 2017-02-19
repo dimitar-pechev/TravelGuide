@@ -369,3 +369,7 @@ body {
 .store-item-footer {
     padding: 8px 8px !important;
 }
+
+.form-add {
+    padding: 3% 10% !important;
+}

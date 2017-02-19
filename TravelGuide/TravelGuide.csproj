@@ -249,6 +249,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Store\AddItem.aspx" />
     <Content Include="Store\AllItems.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -384,6 +385,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Store\AddItem.aspx.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\AddItem.aspx.designer.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Store\AllItems.aspx.cs">
       <DependentUpon>AllItems.aspx</DependentUpon>

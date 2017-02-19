@@ -12,7 +12,7 @@ namespace TravelGuide.Services.Store.Contracts
         
         void DeleteItem(StoreItem item);
 
-        void AddNewItem(string itemName, string description, string destFor, string imageUrl, string brand, double price);
+        bool AddNewItem(string itemName, string description, string destFor, string imageUrl, string brand, string price);
 
         void ChangeStatus(StoreItem item);
     }
