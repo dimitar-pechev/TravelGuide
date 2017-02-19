@@ -286,11 +286,21 @@ body {
 
 .gallery-container {
     background-color: white;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    margin-top: -3%;
 }
 
 .gallery-item {
     height: 300px;
+    margin-bottom: 4%;
+    box-shadow: 0 0 6px grey;
+    cursor: pointer;
 }
+
+    .gallery-item:hover {
+        box-shadow: 0 0 15px grey;
+    }
 
 .gallery-image-image {
     height: 200px;
@@ -304,4 +314,20 @@ body {
 .image-comments-likes, .image-comments-likes * {
     margin: 0;
     padding: 0;
+}
+
+.gallery-pager {
+    padding-top: 3%;
+}
+
+.modal-image {
+    width: 100%;
+}
+
+.modal-footer p {
+    margin-bottom: 0;
+}
+
+.btn-gallery {
+    margin: 0 0 0 15px;
 }

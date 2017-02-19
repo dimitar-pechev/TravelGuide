@@ -202,6 +202,7 @@
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Gallery\AllPhotos.aspx" />
+    <Content Include="Gallery\Details.aspx" />
     <Content Include="Images\boka-kotorska-1920x890.jpg" />
     <Content Include="Images\destinations-heading.png" />
     <Content Include="Images\fb-art.png" />
@@ -348,6 +349,13 @@
     </Compile>
     <Compile Include="Gallery\AllPhotos.aspx.designer.cs">
       <DependentUpon>AllPhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

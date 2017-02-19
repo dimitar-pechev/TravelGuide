@@ -24,5 +24,25 @@ namespace TravelGuide.Gallery
             this.ListViewGalleryItem.DataSource = this.service.GetAllNotDeletedGalleryImagesOrderedByDate();
             this.ListViewGalleryItem.DataBind();
         }
+
+        protected void BtnDeleteImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void BtnLikeImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void BtnCommentImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void BtnSelectedImage_Click(object sender, EventArgs e)
+        {
+            this.Response.Redirect("/");
+        }
     }
 }
