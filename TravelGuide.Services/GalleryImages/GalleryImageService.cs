@@ -14,20 +14,31 @@ namespace TravelGuide.Services.GalleryImages
         protected ITravelGuideContext context;
         protected IGalleryImageFactory imageFactory;
         protected IGalleryLikeFactory likeFactory;
+        protected IGalleryCommentFactory commentFactory;
 
         public GalleryImageService(ITravelGuideContext context, IGalleryImageFactory imageFactory,
-            IGalleryLikeFactory likeFactory)
+            IGalleryLikeFactory likeFactory, IGalleryCommentFactory commentFactory)
         {
             this.context = context;
             this.imageFactory = imageFactory;
             this.likeFactory = likeFactory;
+            this.commentFactory = commentFactory;
+        }
+
+        public void AddComment(string username, string content, Guid imageId)
+        {
+            var userId = Guid.Parse(this.context.Users.FirstOrDefault(x => x.UserName == username).Id);
+            var comment = this.commentFactory.CreateGalleryComment(userId, content, imageId);
+            var image = this.GetGalleryImageById(imageId);
+            image.Comments.Add(comment);
+            this.context.SaveChanges();
         }
 
         public void ToggleLike(string username, Guid imageId)
         {
             var userId = Guid.Parse(this.context.Users.FirstOrDefault(x => x.UserName == username).Id);
             var like = this.likeFactory.CreateGalleryLike(userId, imageId);
-            var image = this.GetAllNotDeletedGalleryImagesOrderedByDate().FirstOrDefault(x => x.Id == imageId);
+            var image = this.GetGalleryImageById(imageId);
 
             GalleryLike dbLike = null;
             foreach (var item in image.Likes)
@@ -61,6 +72,7 @@ namespace TravelGuide.Services.GalleryImages
             return this.context
                 .GalleryImages
                 .Include(im => im.Likes)
+                .Include(im => im.Comments)
                 .Where(x => !x.IsDeleted)
                 .OrderByDescending(x => x.CreatedOn)
                 .ToList();

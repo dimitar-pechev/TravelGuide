@@ -66,7 +66,8 @@ namespace TravelGuide.Gallery
 
         protected void BtnSubmitNewComment_Click(object sender, EventArgs e)
         {
-
+            this.service.AddComment(this.User.Identity.Name, this.NewCommentContent.Value.Trim(), this.Image.Id);
+            this.DataBind();
         }
-    }   
+    }
 }

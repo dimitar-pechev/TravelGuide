@@ -81,6 +81,7 @@
     <Compile Include="Articles\Contracts\IArticleService.cs" />
     <Compile Include="Articles\Contracts\ICommentService.cs" />
     <Compile Include="Factories\IArticleFactory.cs" />
+    <Compile Include="Factories\IGalleryCommentFactory.cs" />
     <Compile Include="Factories\IGalleryImageFactory.cs" />
     <Compile Include="Factories\IGalleryLikeFactory.cs" />
     <Compile Include="GalleryImages\Contracts\IGalleryImageService.cs" />

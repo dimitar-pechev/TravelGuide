@@ -5,10 +5,14 @@ namespace TravelGuide.Models.Gallery
 {
     public class GalleryComment : Comment
     {
+        public GalleryComment() : base()
+        {
+        }
+
         public GalleryComment(Guid userId, string content, Guid imageId)
             : base()
         {
-            this.UserId = UserId;
+            this.UserId = userId;
             this.Content = content;
             this.GalleryImageId = imageId;
         }
