@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using TravelGuide.Data;
+using TravelGuide.Models.Requests;
 using TravelGuide.Models.Store;
 using TravelGuide.Services.Factories;
 using TravelGuide.Services.Requests.Contracts;
@@ -27,6 +30,12 @@ namespace TravelGuide.Services.Requests
 
             this.context.Requests.Add(request);
             this.context.SaveChanges();
+        }
+
+        public IEnumerable<Request> GetAllRequests()
+        {
+            var requests = this.context.Requests.ToList();
+            return requests;
         }
     }
 }

@@ -484,3 +484,11 @@ body {
     left: 44%;
     z-index: 999;
 }
+
+.img-request-profile {
+    max-height: 100px;
+}
+
+.pager-profile {
+    margin-bottom: 5%;
+}
