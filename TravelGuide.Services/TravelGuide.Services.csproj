@@ -85,10 +85,13 @@
     <Compile Include="Factories\IGalleryCommentFactory.cs" />
     <Compile Include="Factories\IGalleryImageFactory.cs" />
     <Compile Include="Factories\IGalleryLikeFactory.cs" />
+    <Compile Include="Factories\IRequestFactory.cs" />
     <Compile Include="Factories\IStoreItemFactory.cs" />
     <Compile Include="GalleryImages\Contracts\IGalleryImageService.cs" />
     <Compile Include="GalleryImages\GalleryImageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\Contracts\IRequestService.cs" />
+    <Compile Include="Requests\RequestService.cs" />
     <Compile Include="Store\CartService.cs" />
     <Compile Include="Store\Contracts\ICartService.cs" />
     <Compile Include="Store\Contracts\IStoreService.cs" />

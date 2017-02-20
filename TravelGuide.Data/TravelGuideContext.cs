@@ -3,6 +3,7 @@ using System.Data.Entity;
 using TravelGuide.Models;
 using TravelGuide.Models.Articles;
 using TravelGuide.Models.Gallery;
+using TravelGuide.Models.Requests;
 using TravelGuide.Models.Store;
 
 namespace TravelGuide.Data
@@ -13,7 +14,7 @@ namespace TravelGuide.Data
             : base("TravelGuideDb")
         {
         }
-        
+
         public IDbSet<Article> Articles { get; set; }
 
         public IDbSet<ArticleComment> Comments { get; set; }
@@ -26,11 +27,13 @@ namespace TravelGuide.Data
 
         public IDbSet<StoreItem> StoreItems { get; set; }
 
+        public IDbSet<Request> Requests { get; set; }
+
         public new void SaveChanges()
         {
             base.SaveChanges();
         }
-        
+
         public static TravelGuideContext Create()
         {
             return new TravelGuideContext();
