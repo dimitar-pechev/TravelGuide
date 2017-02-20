@@ -21,7 +21,7 @@
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
                 <div class="row text-center" runat="server" id="NoResultsPanel" visible="false">
-                    <p>No results were found... Try something else!</p>
+                    <p>No articles were found... Try something else!</p>
                 </div>
                 <asp:ListView runat="server" ID="ListViewDestinations"
                     ItemType="TravelGuide.Models.Articles.Article">

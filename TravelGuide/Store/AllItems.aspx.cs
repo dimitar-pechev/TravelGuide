@@ -24,5 +24,22 @@ namespace TravelGuide.Store
             this.ListViewStoreItems.DataSource = this.service.GetAllNotDeletedStoreItemsOrderedByDate();
             this.ListViewStoreItems.DataBind();
         }
+
+        protected void SearchBarDiscover_TextChanged(object sender, EventArgs e)
+        {
+            var items = this.service.GetItemsByKeyword(this.SearchBarDiscover.Text);
+
+            if (items.Count() == 0)
+            {
+                this.NoResultsPanel.Visible = true;
+            }
+            else
+            {
+                this.NoResultsPanel.Visible = false;
+            }
+
+            this.ListViewStoreItems.DataSource = items;
+            this.ListViewStoreItems.DataBind();
+        }
     }
 }

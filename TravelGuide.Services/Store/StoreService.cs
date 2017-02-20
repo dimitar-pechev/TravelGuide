@@ -84,6 +84,24 @@ namespace TravelGuide.Services.Store
             return items;
         }
 
+        public IEnumerable<StoreItem> GetItemsByKeyword(string keyword)
+        {
+            if (string.IsNullOrEmpty(keyword) || string.IsNullOrEmpty(keyword.Trim()))
+            {
+                return this.context.StoreItems.ToList();
+            }
+
+            var keywordToLower = keyword.ToLower();
+            var items = this.context.StoreItems
+                .Where(x => x.Brand.ToLower().Contains(keywordToLower) ||
+                x.Description.ToLower().Contains(keywordToLower) ||
+                x.DestinationFor.ToLower().Contains(keywordToLower) ||
+                x.ItemName.ToLower().Contains(keywordToLower))
+                .ToList();
+
+            return items;
+        }
+
         public StoreItem GetStoreItemById(Guid id)
         {
             var item = this.context.StoreItems.Find(id);

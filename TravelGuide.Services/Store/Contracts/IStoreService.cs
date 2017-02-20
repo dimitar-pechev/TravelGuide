@@ -8,6 +8,8 @@ namespace TravelGuide.Services.Store.Contracts
     {
         IEnumerable<StoreItem> GetAllNotDeletedStoreItemsOrderedByDate();
 
+        IEnumerable<StoreItem> GetItemsByKeyword(string keyword);
+
         StoreItem GetStoreItemById(Guid id);        
         
         void DeleteItem(StoreItem item);

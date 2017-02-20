@@ -7,7 +7,7 @@ namespace TravelGuide.Tests.Services.Articles.Mock
     public class ExtendedArticleService : ArticleService
     {
         public ExtendedArticleService(ITravelGuideContext context, IArticleFactory articleFactory)
-            : base(context, articleFactory)
+            : base(context, articleFactory, null)
         {
         }
 
