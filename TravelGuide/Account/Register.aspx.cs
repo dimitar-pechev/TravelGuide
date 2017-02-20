@@ -18,8 +18,7 @@ namespace TravelGuide.Account
             var user = new User()
             {
                 UserName = this.Username.Text,
-                Email = this.Email.Text,
-                RegisteredOn = DateTime.Now
+                Email = this.Email.Text
             };
             
             IdentityResult result = manager.Create(user, Password.Text);

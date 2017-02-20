@@ -12,13 +12,18 @@ namespace TravelGuide.Models.Requests
             this.CreatedOn = DateTime.Now;
         }
 
-        public Request(Guid itemId, StoreItem item, Guid userId, User user)
+        public Request(Guid itemId, StoreItem item, Guid userId, User user,
+            string firstName, string lastName, string phone, string address)
             : this()
         {
             this.StoreItemId = itemId;
             this.StoreItem = item;
             this.UserId = userId;
             this.User = user;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Phone = phone;
+            this.Address = address;
         }
 
         public Guid Id { get; set; }
@@ -34,5 +39,13 @@ namespace TravelGuide.Models.Requests
         public Guid UserId { get; set; }
 
         public User User { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Address { get; set; }
     }
 }

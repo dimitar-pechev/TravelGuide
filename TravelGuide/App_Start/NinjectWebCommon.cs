@@ -21,6 +21,8 @@ namespace TravelGuide.App_Start
     using Services.Store.Contracts;
     using Services.Requests.Contracts;
     using Services.Requests;
+    using Services.Users.Contracts;
+    using Services.Users;
 
     public static class NinjectWebCommon
     {
@@ -81,6 +83,7 @@ namespace TravelGuide.App_Start
             kernel.Bind<IStoreService>().To<StoreService>();
             kernel.Bind<ICartService>().To<CartService>();
             kernel.Bind<IRequestService>().To<RequestService>();
+            kernel.Bind<IUserService>().To<UserService>();
 
             kernel.Bind<IArticleFactory>().ToFactory();
             kernel.Bind<IGalleryImageFactory>().ToFactory();

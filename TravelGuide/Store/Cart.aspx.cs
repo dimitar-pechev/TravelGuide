@@ -7,7 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TravelGuide.App_Start;
 using TravelGuide.Models.Store;
+using TravelGuide.Services.Requests.Contracts;
 using TravelGuide.Services.Store.Contracts;
+using TravelGuide.Services.Users.Contracts;
 
 namespace TravelGuide
 {
@@ -16,11 +18,15 @@ namespace TravelGuide
         private const string CookieName = "store-items";
         private readonly IStoreService storeService;
         private readonly ICartService cartService;
+        private readonly IRequestService requestService;
+        private readonly IUserService userService;
 
         public Cart()
         {
             this.storeService = NinjectWebCommon.Kernel.Get<IStoreService>();
             this.cartService = NinjectWebCommon.Kernel.Get<ICartService>();
+            this.requestService = NinjectWebCommon.Kernel.Get<IRequestService>();
+            this.userService = NinjectWebCommon.Kernel.Get<IUserService>();
         }
         
         protected void Page_Load(object sender, EventArgs e)
@@ -38,6 +44,12 @@ namespace TravelGuide
 
             this.GridViewCartItems.DataSource = items;
             this.GridViewCartItems.DataBind();
+
+            var user = this.userService.GetByUsername(this.User.Identity.Name);
+            this.FirstName.Text = user.FirstName;
+            this.LastName.Text = user.LastName;
+            this.PhoneNumber.Text = user.PhoneNumber;
+            this.Address.Text = user.Address;
         }
 
         protected void GridViewCartItems_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -85,8 +97,17 @@ namespace TravelGuide
         protected void BtnCheckOut_Click(object sender, EventArgs e)
         {
             var items = this.cartService.extractItemsFromCookie(this.Request.Cookies[CookieName + this.User.Identity.Name]);
+            var username = this.User.Identity.Name;
 
+            var firstName = this.FirstName.Text;
+            var lastName = this.LastName.Text;
+            var phone = this.PhoneNumber.Text;
+            var address = this.Address.Text;
 
+            foreach (var item in items)
+            {
+                this.requestService.MakeRequest(item, username, firstName, lastName, phone, address);
+            }
 
             var cookie = this.cartService.GetClearedCookie(this.User.Identity.Name);
             this.Response.Cookies.Add(cookie);

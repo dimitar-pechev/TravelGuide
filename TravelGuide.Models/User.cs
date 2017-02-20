@@ -5,16 +5,31 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using TravelGuide.Models.Articles;
+using TravelGuide.Models.Requests;
 
 namespace TravelGuide.Models
 {
     public class User : IdentityUser
     {
+        public User() : base()
+        {
+            this.IsDeleted = false;
+            this.RegisteredOn = DateTime.Now;
+            this.Requests = new HashSet<Request>();
+            this.Articles = new HashSet<Article>();
+        }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
         public DateTime RegisteredOn { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public string Address { get; set; }
+
+        public virtual ICollection<Request> Requests { get; set; }
 
         public virtual ICollection<Article> Articles { get; set; }
 

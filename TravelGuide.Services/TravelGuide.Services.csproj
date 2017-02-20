@@ -96,6 +96,8 @@
     <Compile Include="Store\Contracts\ICartService.cs" />
     <Compile Include="Store\Contracts\IStoreService.cs" />
     <Compile Include="Store\StoreService.cs" />
+    <Compile Include="Users\Contracts\IUserService.cs" />
+    <Compile Include="Users\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelGuide.Data\TravelGuide.Data.csproj">
