@@ -170,5 +170,14 @@ namespace TravelGuide.Services.Articles
 
             return articles;
         }
+
+        public void DeleteComment(string commentId)
+        {
+            var id = Guid.Parse(commentId);
+            var comment = this.context.Comments.Find(id);
+
+            this.context.Comments.Remove(comment);
+            this.context.SaveChanges();
+        }
     }
 }

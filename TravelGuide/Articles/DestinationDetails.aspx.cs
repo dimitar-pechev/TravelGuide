@@ -46,6 +46,11 @@ namespace TravelGuide
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.Page.IsPostBack)
+            {
+                return;
+            }
+
             this.CoverPhoto.ImageUrl = this.Article.CoverImageUrl;
 
             this.ListViewArticleComments.DataSource = this.Article.Comments;
@@ -79,6 +84,20 @@ namespace TravelGuide
         {
             this.articleService.DeleteArticle(Article);
             this.Response.Redirect("~/Articles/CitiesAndSites.aspx");
+        }
+        
+        protected void ListViewArticleComments_ItemDeleting(object sender, ListViewDeleteEventArgs e)
+        {
+            var id = string.Empty;
+            foreach (var item in e.Keys.Values)
+            {
+                id = item.ToString();
+            }
+
+            this.articleService.DeleteComment(id);
+
+            this.ListViewArticleComments.DataSource = this.Article.Comments;
+            this.ListViewArticleComments.DataBind();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DestinationDetails.aspx.cs" Inherits="TravelGuide.DestinationDetails" %>
+﻿<%@ Page Title="Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" EnableEventValidation="false"
+    CodeBehind="DestinationDetails.aspx.cs" Inherits="TravelGuide.DestinationDetails" %>
 
 <asp:Content ID="DestiantionDetails" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container destinations-details-container">
@@ -83,7 +84,7 @@
         <div id="comments" class="row comment-panel-dest">
             <h4 class="text-center"><span class="glyphicon glyphicon-comment"></span>Comments</h4>
             <hr />
-            <asp:ListView runat="server" ID="ListViewArticleComments"
+            <asp:ListView runat="server" ID="ListViewArticleComments" DataKeyNames="Id" OnItemDeleting="ListViewArticleComments_ItemDeleting"
                 ItemType="TravelGuide.Models.Articles.ArticleComment">
                 <LayoutTemplate>
                     <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
@@ -100,6 +101,8 @@
                                 <asp:Label Text='<%#: Item.Content %>' runat="server" />
                             </p>
                             <div class="text-right">
+                                <asp:Button Text="Delete" ID="BtnDeleteComment" CommandName="Delete"
+                                    CssClass="pull-left btn btn-sm btn-danger" runat="server" />
                                 <asp:Label Text='<%#: Item.User.UserName %>' runat="server" />
                                 <br />
                                 <asp:Label Text='<%#: Item.CreatedOn %>' runat="server" />
