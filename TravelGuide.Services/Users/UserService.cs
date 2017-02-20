@@ -22,7 +22,7 @@ namespace TravelGuide.Services.Users
             return users;
         }
 
-        public User GetById(Guid id)
+        public User GetById(string id)
         {
             var user = this.context.Users.Find(id);
             return user;
@@ -32,6 +32,18 @@ namespace TravelGuide.Services.Users
         {
             var user = this.context.Users.FirstOrDefault(x => x.UserName == username);
             return user;
+        }
+
+        public void UpdateUserInfo(string id, string firstName, string lastName, string phone, string address)
+        {
+            var user = this.context.Users.Find(id);
+
+            user.FirstName = firstName;
+            user.LastName = lastName;
+            user.PhoneNumber = phone;
+            user.Address = address;
+
+            this.context.SaveChanges();
         }
     }
 }

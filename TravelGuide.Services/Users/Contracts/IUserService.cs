@@ -6,10 +6,12 @@ namespace TravelGuide.Services.Users.Contracts
 {
     public interface IUserService
     {
-        User GetById(Guid id);
+        User GetById(string id);
 
         User GetByUsername(string username);
 
         IEnumerable<User> GetAllUsers();
+
+        void UpdateUserInfo(string id, string firstName, string lastName, string phone, string address);
     }
 }

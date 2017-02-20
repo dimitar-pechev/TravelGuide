@@ -492,3 +492,9 @@ body {
 .pager-profile {
     margin-bottom: 5%;
 }
+
+#MainContent_EditProfilePanel {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+}

@@ -24,7 +24,7 @@
                 <div class="col-md-6 text-center">
                     <asp:UpdatePanel runat="server" UpdateMode="Always">
                         <ContentTemplate>
-                            <h4><%: this.Action %></h4>
+                            <h4><%: Action %></h4>
                             <div runat="server" id="PanelRequest" visible="false">
                                 <asp:ListView runat="server" ID="ListViewRequests" ItemType="TravelGuide.Models.Requests.Request">
                                     <LayoutTemplate>
@@ -69,7 +69,20 @@
                     </asp:UpdatePanel>
                     <asp:UpdatePanel runat="server">
                         <ContentTemplate>
-                            <div id="EditProfilePanel" runat="server" visible="false">
+                            <p runat="server" id="ResultLabel" visible="false" style="color: red;">Profile updated successfully!</p>
+                            <div id="EditProfilePanel" runat="server" visible="false" class="text-center">
+                                <asp:Label Text="First Name" runat="server" AssociatedControlID="FirstNameEdit" />
+                                <asp:TextBox runat="server" ID="FirstNameEdit" />
+                                <br />
+                                <asp:Label Text="Last Name" runat="server" AssociatedControlID="LastNameEdit" />
+                                <asp:TextBox runat="server" ID="LastNameEdit" />
+                                <br />
+                                <asp:Label Text="Phone" runat="server" AssociatedControlID="PhoneEdit" />
+                                <asp:TextBox runat="server" ID="PhoneEdit" TextMode="Number" />
+                                <br />
+                                <asp:Label Text="Addres" runat="server" AssociatedControlID="AddressEdit" />
+                                <asp:TextBox runat="server" ID="AddressEdit" />
+                                <asp:Button Text="Submit" runat="server" ID="BtnSubmitNeProfileInfo" OnClick="BtnSubmitNeProfileInfo_Click" CssClass="btn btn-success btn-login" />
                             </div>
                         </ContentTemplate>
                     </asp:UpdatePanel>
