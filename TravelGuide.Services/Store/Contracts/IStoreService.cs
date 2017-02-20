@@ -15,5 +15,7 @@ namespace TravelGuide.Services.Store.Contracts
         bool AddNewItem(string itemName, string description, string destFor, string imageUrl, string brand, string price);
 
         void ChangeStatus(StoreItem item);
+
+        IEnumerable<StoreItem> GetByDestination(string targetDestination);
     }
 }

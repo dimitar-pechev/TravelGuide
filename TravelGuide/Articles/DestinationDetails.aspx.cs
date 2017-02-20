@@ -9,18 +9,22 @@ using System.Web.UI.WebControls;
 using TravelGuide.App_Start;
 using TravelGuide.Data;
 using TravelGuide.Models.Articles;
+using TravelGuide.Models.Store;
 using TravelGuide.Services.Contracts;
 using TravelGuide.Services.Factories;
+using TravelGuide.Services.Store.Contracts;
 
 namespace TravelGuide
 {
     public partial class DestinationDetails : Page
     {
         private IArticleService articleService;
+        private IStoreService storeService;
 
         public DestinationDetails()
         {
             this.articleService = NinjectWebCommon.Kernel.Get<IArticleService>();
+            this.storeService = NinjectWebCommon.Kernel.Get<IStoreService>();
         }
 
         public Article Article { get; set; }
@@ -43,8 +47,14 @@ namespace TravelGuide
         protected void Page_Load(object sender, EventArgs e)
         {
             this.CoverPhoto.ImageUrl = this.Article.CoverImageUrl;
+
             this.ListViewArticleComments.DataSource = this.Article.Comments;
             this.ListViewArticleComments.DataBind();
+
+            var relatedItems = this.storeService.GetByDestination(this.Article.City);
+
+            this.ListViewRelated.DataSource = relatedItems;
+            this.ListViewRelated.DataBind();
         }
 
         private Guid GetGuidFromString(string str)

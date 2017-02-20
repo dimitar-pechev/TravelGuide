@@ -18,8 +18,40 @@
             <hr />
         </div>
         <div class="row article-text">
-            <img src="<%: this.Article.PrimaryImageUrl %>" data-toggle="modal" data-target="#details-photo"
-                class="thumb-photo thumbnail thumb-photo-left img-responsive" alt="Alternate Text" />
+            <div class="col-md-4 article-aside">
+                <div class="row">
+                    <img src="<%: this.Article.PrimaryImageUrl %>" data-toggle="modal" data-target="#details-photo"
+                        class="thumb-photo thumbnail thumb-photo-main img-responsive" alt="Alternate Text" />
+                </div>
+                <div class="row">
+                    <hr />
+                    <p class="text-center">From our store</p>
+                    <asp:ListView runat="server" ID="ListViewRelated" ItemType="TravelGuide.Models.Store.StoreItem">
+                        <EmptyDataTemplate>
+                            <div class="text-center">
+                                <asp:Label Text="There are currently no related products from the store..." CssClass="text-center" runat="server" />
+                            </div>
+                            <hr />
+                        </EmptyDataTemplate>
+                        <ItemTemplate>
+                            <div class="magring-bottom">
+                                <asp:HyperLink NavigateUrl='<%#: string.Format($"/Store/Details.aspx?id={Item.Id}") %>' runat="server">
+                            <div class="card related-item-placeholder">
+                                <div class="col-md-2 img-placeholder">
+                                    <asp:Image CssClass="related-item-img" ImageUrl="<%#: Item.ImageUrl %>" runat="server" />
+                                </div>
+                                <div class="col-md-10">
+                                    <asp:label text="<%#: Item.ItemName %>" runat="server" />
+                                    <br />
+                                    <asp:label text="<%#: Item.Brand %>" runat="server" />
+                                </div>
+                            </div>
+                                </asp:HyperLink>
+                            </div>
+                        </ItemTemplate>
+                    </asp:ListView>
+                </div>
+            </div>
             <p id="about"><span class="glyphicon glyphicon-globe"></span><%:this.Article.Title %></p>
             <%: this.Article.ContentMain %>
         </div>
@@ -88,7 +120,7 @@
     </script>
 
     <%--comments modal--%>
-     <div class="modal fade" id="comment-box" role="dialog">
+    <div class="modal fade" id="comment-box" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">

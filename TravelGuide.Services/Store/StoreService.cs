@@ -75,6 +75,15 @@ namespace TravelGuide.Services.Store
             return items;
         }
 
+        public IEnumerable<StoreItem> GetByDestination(string targetDestination)
+        {
+            var items = this.context.StoreItems
+                .Where(x => x.DestinationFor.Contains(targetDestination))
+                .ToList();
+
+            return items;
+        }
+
         public StoreItem GetStoreItemById(Guid id)
         {
             var item = this.context.StoreItems.Find(id);

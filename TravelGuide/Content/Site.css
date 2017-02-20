@@ -153,7 +153,7 @@ body {
     color: black;
 }
 
-    .destination-card:hover {
+    .destination-card:hover, .related-item-placeholder:hover {
         box-shadow: 0 0 15px grey;
     }
 
@@ -443,4 +443,31 @@ body {
 
 #check-out {
     text-align: center;
+}
+
+.thumb-photo-main {
+    width: 100%;
+    cursor: pointer;
+}
+
+.article-aside {
+    margin-right: 2%;
+}
+
+.related-item-placeholder {
+    padding: 10px;
+    color: black;
+}
+
+.related-item-img {
+    max-height: 50px;
+}
+
+.img-placeholder {
+    padding: 0;
+    text-align:center;
+}
+
+.magring-bottom {
+    margin-bottom: 10px;
 }
