@@ -68,7 +68,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Cart" class="waves-effect waves-light">Cart</a></li>
+                                <li><a runat="server" href="~/Store/Cart" class="waves-effect waves-light">Cart</a></li>
                                 <li><a runat="server" href="~/Account/Manage" class="waves-effect waves-light" title="Manage your account">Profile</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" CssClass="waves-effect waves-light" LogoutText="Sign out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />

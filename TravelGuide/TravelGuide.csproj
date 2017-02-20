@@ -190,7 +190,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Articles\AddArticle.aspx" />
     <Content Include="Articles\CitiesAndSites.aspx" />
-    <Content Include="Cart.aspx" />
+    <Content Include="Store\Cart.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\mdb.css" />
@@ -335,11 +335,11 @@
     <Compile Include="Articles\CitiesAndSites.aspx.designer.cs">
       <DependentUpon>CitiesAndSites.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cart.aspx.cs">
+    <Compile Include="Store\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cart.aspx.designer.cs">
+    <Compile Include="Store\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">

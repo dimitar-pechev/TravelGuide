@@ -47,8 +47,8 @@ namespace TravelGuide.Store
 
         protected void BtnAddToCart_Click(object sender, EventArgs e)
         {
-            var cookiePrev = this.Request.Cookies[CookieName];
-            var cookie = this.cartService.WriteCookie(cookiePrev, this.StoreItem.Id.ToString());
+            var cookiePrev = this.Request.Cookies[CookieName + this.User.Identity.Name];
+            var cookie = this.cartService.WriteCookie(cookiePrev, this.User.Identity.Name, this.StoreItem.Id.ToString());
             this.Response.Cookies.Add(cookie);
         }
     }

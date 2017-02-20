@@ -20,12 +20,12 @@ namespace TravelGuide.Services.Store
         public IEnumerable<StoreItem> extractItemsFromCookie(HttpCookie cookie)
         {
             var items = new List<StoreItem>();
-            if (cookie == null || cookie.Name != CookieName)
+            if (cookie == null || !cookie.Name.Contains(CookieName))
             {
                 return items;
             }
 
-            var ids = cookie.Value.Split(',').ToArray();
+            var ids = cookie.Value.Split(',').Where(x => !string.IsNullOrEmpty(x)).ToList();
 
             foreach (var id in ids)
             {
@@ -37,11 +37,11 @@ namespace TravelGuide.Services.Store
             return items;
         }
 
-        public HttpCookie WriteCookie(HttpCookie cookie, string itemId)
+        public HttpCookie WriteCookie(HttpCookie cookie, string username, string itemId)
         {
-            if (cookie == null || cookie.Name != CookieName)
+            if (cookie == null || !cookie.Name.Contains(CookieName))
             {
-                cookie = new HttpCookie(CookieName, itemId);
+                cookie = new HttpCookie(CookieName + username, itemId);
             }
             else
             {
@@ -55,7 +55,7 @@ namespace TravelGuide.Services.Store
 
         public HttpCookie DeleteItemFromCookie(HttpCookie cookie, string itemId)
         {
-            if (cookie == null || cookie.Name != CookieName)
+            if (cookie == null || !cookie.Name.Contains(CookieName))
             {
                 throw new ArgumentNullException("Passed cookie cannot be null!");
             }
