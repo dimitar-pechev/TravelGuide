@@ -26,5 +26,22 @@ namespace TravelGuide
             this.ListViewDestinations.DataSource = articles;
             this.ListViewDestinations.DataBind();
         }
+
+        protected void SearchBarDiscover_TextChanged(object sender, EventArgs e)
+        {
+            var articles = this.articleService.GetArticlesByKeyword(this.SearchBarDiscover.Text);
+
+            if (articles.Count() == 0)
+            {
+                this.NoResultsPanel.Visible = true;
+            }
+            else
+            {
+                this.NoResultsPanel.Visible = false;
+            }
+
+            this.ListViewDestinations.DataSource = articles;
+            this.ListViewDestinations.DataBind();
+        }
     }
 }

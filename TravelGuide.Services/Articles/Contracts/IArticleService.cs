@@ -10,6 +10,8 @@ namespace TravelGuide.Services.Contracts
 
         IEnumerable<Article> GetAllNotDeletedArticlesOrderedByDate();
 
+        IEnumerable<Article> GetArticlesByKeyword(string keyword);
+
         Article GetArticleById(Guid id);
 
         void CreateArticle(string username, string title, string city, string country, string contentMain,

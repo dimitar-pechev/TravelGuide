@@ -137,5 +137,22 @@ namespace TravelGuide.Services.Articles
 
             this.context.SaveChanges();
         }
+
+        public IEnumerable<Article> GetArticlesByKeyword(string keyword)
+        {
+            if (string.IsNullOrEmpty(keyword) || string.IsNullOrEmpty(keyword.Trim()))
+            {
+                return this.context.Articles.ToList();
+            }
+
+            var keywordToLower = keyword.ToLower();
+            var articles = this.context.Articles
+                .Where(x => x.City.ToLower().Contains(keywordToLower) ||
+                x.Country.ToLower().Contains(keywordToLower) ||
+                x.Title.ToLower().Contains(keywordToLower))
+                .ToList();
+
+            return articles;
+        }
     }
 }

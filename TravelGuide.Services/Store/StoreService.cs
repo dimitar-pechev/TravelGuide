@@ -78,7 +78,7 @@ namespace TravelGuide.Services.Store
         public IEnumerable<StoreItem> GetByDestination(string targetDestination)
         {
             var items = this.context.StoreItems
-                .Where(x => x.DestinationFor.Contains(targetDestination))
+                .Where(x => x.DestinationFor.ToLower().Contains(targetDestination.ToLower()))
                 .ToList();
 
             return items;
