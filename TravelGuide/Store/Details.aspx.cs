@@ -13,11 +13,14 @@ namespace TravelGuide.Store
 {
     public partial class Details : Page
     {
-        private IStoreService service;
+        private const string CookieName = "store-items";
+        private readonly IStoreService storeService;
+        private readonly ICartService cartService;
 
         public Details()
         {
-            this.service = NinjectWebCommon.Kernel.Get<IStoreService>();
+            this.storeService = NinjectWebCommon.Kernel.Get<IStoreService>();
+            this.cartService = NinjectWebCommon.Kernel.Get<ICartService>();
         }
 
         public StoreItem StoreItem { get; set; }
@@ -27,7 +30,7 @@ namespace TravelGuide.Store
             try
             {
                 var id = GetGuidFromString(this.Request.QueryString["id"]);
-                this.StoreItem = this.service.GetStoreItemById(id);
+                this.StoreItem = this.storeService.GetStoreItemById(id);
                 this.DataBind();
             }
             catch (Exception)
@@ -40,6 +43,13 @@ namespace TravelGuide.Store
         {
             var id = Guid.Parse(str);
             return id;
+        }
+
+        protected void BtnAddToCart_Click(object sender, EventArgs e)
+        {
+            var cookiePrev = this.Request.Cookies[CookieName];
+            var cookie = this.cartService.WriteCookie(cookiePrev, this.StoreItem.Id.ToString());
+            this.Response.Cookies.Add(cookie);
         }
     }
 }

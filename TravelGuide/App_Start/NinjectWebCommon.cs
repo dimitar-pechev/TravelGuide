@@ -77,6 +77,7 @@ namespace TravelGuide.App_Start
             kernel.Bind<IArticleService>().To<ArticleService>();
             kernel.Bind<IGalleryImageService>().To<GalleryImageService>();
             kernel.Bind<IStoreService>().To<StoreService>();
+            kernel.Bind<ICartService>().To<CartService>();
 
             kernel.Bind<IArticleFactory>().ToFactory();
             kernel.Bind<IGalleryImageFactory>().ToFactory();

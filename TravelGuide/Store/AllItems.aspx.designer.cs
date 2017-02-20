@@ -13,6 +13,15 @@ namespace TravelGuide.Store {
     public partial class AllItems {
         
         /// <summary>
+        /// SearchBarDiscover control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SearchBarDiscover;
+        
+        /// <summary>
         /// ListViewStoreItems control.
         /// </summary>
         /// <remarks>

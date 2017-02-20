@@ -6,8 +6,16 @@
     </div>
     <div class="container store-container">
         <div class="row">
-            <div class="row text-right button-row">
-                <asp:HyperLink NavigateUrl="~/Store/AddItem.aspx" CssClass="btn btn-success" Text="Add new item" runat="server" />
+            <div class="row menu-store">
+                <div class="col-md-1 col-md-offset-3 text-right">
+                    <asp:Label Text="Search:" AssociatedControlID="SearchBarDiscover" CssClass="search-label-discover" runat="server" />
+                </div>
+                <div class="col-md-4">
+                    <asp:TextBox runat="server" ID="SearchBarDiscover" />
+                </div>
+                <div class="col-md-4 text-right">
+                    <asp:HyperLink NavigateUrl="~/Articles/AddArticle.aspx" CssClass="btn btn-success" Text="Add new article" runat="server" />
+                </div>
             </div>
             <asp:ListView runat="server" ID="ListViewStoreItems" DataKeyNames="Id"
                 ItemType="TravelGuide.Models.Store.StoreItem">
@@ -26,7 +34,7 @@
                                         <asp:Label Text="<%#: Item.Brand %>" runat="server" />
                                     </i>
                                     <br />
-                                    <asp:Label Text='<%#: string.Format($"{Item.Price} BGN") %>' runat="server" />                                    
+                                    <asp:Label Text='<%#: string.Format($"{Item.Price} BGN") %>' runat="server" />
                                     <br />
                                     <asp:Label Text='<%#: Item.InStock ? "In Stock" : "Depleted" %>' runat="server" />
                                 </div>

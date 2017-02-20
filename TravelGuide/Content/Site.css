@@ -390,3 +390,21 @@ body {
 .hr {
     margin-top: 0;
 }
+
+.buy-details {
+    padding-left: 5%;
+}
+
+.form-quantity {
+    width: 50px !important;
+    text-align: center;
+}
+
+.menu-store {
+    margin-top: -3%;
+    padding-right: 20px;
+}
+
+.cart-container{ 
+    background-color: white;
+}

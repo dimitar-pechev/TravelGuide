@@ -18,8 +18,13 @@
             <div class="col-md-4">
                 <h4><%#: string.Format($"{this.StoreItem.Price} BGN") %></h4>
                 <p><%#: this.StoreItem.InStock ? "In Stock" : "Depleted" %></p>
+                <div>
+                    <asp:Label Text="Quantity" AssociatedControlID="QuantityWanted" runat="server" />
+                </div>
                 <div class="row buy-details">
-                    <input type="number" min="1" max="10" value="1" class="form-quantity" id="QuantityWanted" runat="server" />
+                    <input type="number" min="1" max="10" value="" class="form-quantity" id="QuantityWanted" runat="server" />
+                    <asp:Button Text="Add to Cart" ID="BtnAddToCart" CssClass="btn btn-success"
+                        OnClick="BtnAddToCart_Click" runat="server" />
                 </div>
             </div>
         </div>
