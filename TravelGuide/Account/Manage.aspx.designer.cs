@@ -13,13 +13,22 @@ namespace TravelGuide.Account {
     public partial class Manage {
         
         /// <summary>
-        /// successMessage control.
+        /// ProfilePic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
+        protected global::System.Web.UI.HtmlControls.HtmlImage ProfilePic;
+        
+        /// <summary>
+        /// BtnShowRequests control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnShowRequests;
         
         /// <summary>
         /// ChangePassword control.
@@ -38,5 +47,23 @@ namespace TravelGuide.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink CreatePassword;
+        
+        /// <summary>
+        /// BtnShowEditProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnShowEditProfile;
+        
+        /// <summary>
+        /// BtnShowUploadPicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnShowUploadPicture;
     }
 }
