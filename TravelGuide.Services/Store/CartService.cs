@@ -67,5 +67,10 @@ namespace TravelGuide.Services.Store
             cookie.Value = cookieContent;
             return cookie;
         }
+
+        public HttpCookie GetClearedCookie(string username)
+        {
+            return new HttpCookie(CookieName + username, string.Empty);
+        }
     }
 }

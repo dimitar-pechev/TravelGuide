@@ -11,5 +11,7 @@ namespace TravelGuide.Services.Store.Contracts
         IEnumerable<StoreItem> extractItemsFromCookie(HttpCookie cookie);
 
         HttpCookie DeleteItemFromCookie(HttpCookie cookie, string itemId);
+
+        HttpCookie GetClearedCookie(string username);
     }
 }

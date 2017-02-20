@@ -22,11 +22,17 @@ namespace TravelGuide
             this.storeService = NinjectWebCommon.Kernel.Get<IStoreService>();
             this.cartService = NinjectWebCommon.Kernel.Get<ICartService>();
         }
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             var cookie = this.Request.Cookies[CookieName + this.User.Identity.Name];
             var items = this.cartService.extractItemsFromCookie(cookie);
+
+            if (items.Count() == 0)
+            {
+                this.NoItemsTemplate.Visible = true;
+                this.HasItemsTemplate.Visible = false;
+            }
 
             this.TotalPrice.Text = this.GetPrice(items);
 
@@ -50,8 +56,17 @@ namespace TravelGuide
             var cookie = this.Request.Cookies[CookieName + this.User.Identity.Name];
             var newCookie = this.cartService.DeleteItemFromCookie(cookie, id);
             this.Response.Cookies.Add(newCookie);
+
             var items = this.cartService.extractItemsFromCookie(newCookie);
+
+            if (items.Count() == 0)
+            {
+                this.NoItemsTemplate.Visible = true;
+                this.HasItemsTemplate.Visible = false;
+            }
+
             this.TotalPrice.Text = this.GetPrice(items);
+
             this.GridViewCartItems.DataSource = items;
             this.GridViewCartItems.DataBind();
         }
@@ -65,6 +80,19 @@ namespace TravelGuide
             }
 
             return $"Total: {sum} BGN";
+        }
+
+        protected void BtnCheckOut_Click(object sender, EventArgs e)
+        {
+            var items = this.cartService.extractItemsFromCookie(this.Request.Cookies[CookieName + this.User.Identity.Name]);
+
+
+
+            var cookie = this.cartService.GetClearedCookie(this.User.Identity.Name);
+            this.Response.Cookies.Add(cookie);
+
+            this.ReceivedOrder.Visible = true;
+            this.HasItemsTemplate.Visible = false;
         }
     }
 }
