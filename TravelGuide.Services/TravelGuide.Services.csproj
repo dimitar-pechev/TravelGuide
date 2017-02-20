@@ -80,7 +80,7 @@
   <ItemGroup>
     <Compile Include="Articles\ArticleService.cs" />
     <Compile Include="Articles\Contracts\IArticleService.cs" />
-    <Compile Include="Articles\Contracts\ICommentService.cs" />
+    <Compile Include="Factories\IArticleCommentFactory.cs" />
     <Compile Include="Factories\IArticleFactory.cs" />
     <Compile Include="Factories\IGalleryCommentFactory.cs" />
     <Compile Include="Factories\IGalleryImageFactory.cs" />

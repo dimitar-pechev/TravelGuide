@@ -19,5 +19,7 @@ namespace TravelGuide.Services.Contracts
         void EditArticle(Article article);
 
         void DeleteArticle(Article article);
+
+        void AddComment(string username, string content, Guid articleId);
     }
 }

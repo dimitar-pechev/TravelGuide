@@ -12,8 +12,9 @@ namespace TravelGuide.Services.Articles
     {
         protected readonly ITravelGuideContext context;
         protected readonly IArticleFactory articleFactory;
+        protected readonly IArticleCommentFactory commentFactory;
 
-        public ArticleService(ITravelGuideContext context, IArticleFactory articleFactory)
+        public ArticleService(ITravelGuideContext context, IArticleFactory articleFactory, IArticleCommentFactory commentFactory)
         {
             if (context == null)
             {
@@ -25,8 +26,14 @@ namespace TravelGuide.Services.Articles
                 throw new ArgumentNullException("Passed factory cannot be null!");
             }
 
+            if (commentFactory == null)
+            {
+                throw new ArgumentNullException("Passed factory cannot be null!");
+            }
+
             this.context = context;
             this.articleFactory = articleFactory;
+            this.commentFactory = commentFactory;
         }
 
         public void CreateArticle(string username, string title, string city, string country, string contentMain,
@@ -117,6 +124,18 @@ namespace TravelGuide.Services.Articles
 
             var article = this.context.Articles.Find(id);
             return article;
+        }
+
+        public void AddComment(string username, string content, Guid articleId)
+        {
+            var user = this.context.Users.FirstOrDefault(x => x.UserName == username);
+            var parsedId = Guid.Parse(user.Id);
+
+            var comment = this.commentFactory.CreateArticleComment(parsedId, user, content, articleId);
+            var article = this.context.Articles.Find(articleId);
+            article.Comments.Add(comment);
+
+            this.context.SaveChanges();
         }
     }
 }
