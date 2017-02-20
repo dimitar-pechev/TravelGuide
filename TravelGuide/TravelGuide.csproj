@@ -190,6 +190,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Articles\AddArticle.aspx" />
     <Content Include="Articles\CitiesAndSites.aspx" />
+    <Content Include="Articles\EditArticle.aspx" />
     <Content Include="Images\1487625596_profle.png" />
     <Content Include="Store\Cart.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -335,6 +336,13 @@
     </Compile>
     <Compile Include="Articles\CitiesAndSites.aspx.designer.cs">
       <DependentUpon>CitiesAndSites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Articles\EditArticle.aspx.cs">
+      <DependentUpon>EditArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Articles\EditArticle.aspx.designer.cs">
+      <DependentUpon>EditArticle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Store\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>

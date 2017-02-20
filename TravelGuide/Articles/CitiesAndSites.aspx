@@ -26,7 +26,7 @@
                 <asp:ListView runat="server" ID="ListViewDestinations"
                     ItemType="TravelGuide.Models.Articles.Article">
                     <ItemTemplate>
-                        <asp:HyperLink NavigateUrl='<%# string.Format("~/articles/destinationdetails.aspx?id={0}", Item.Id) %>' runat="server">
+                        <asp:HyperLink NavigateUrl='<%#: string.Format("~/articles/destinationdetails.aspx?id={0}", Item.Id) %>' runat="server">
                             <div class="card destination-card">
                                 <div class="card-content col-md-3 card-destinations-image">
                                     <asp:Image ImageUrl="<%#: BindItem.PrimaryImageUrl %>" runat="server" ID="DestinationImage" />

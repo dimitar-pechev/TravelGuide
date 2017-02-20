@@ -7,99 +7,117 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TravelGuide {
+namespace TravelGuide.Articles {
     
     
-    public partial class DestinationDetails {
+    public partial class EditArticle {
         
         /// <summary>
-        /// CoverPhoto control.
+        /// ArticleTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image CoverPhoto;
+        protected global::System.Web.UI.WebControls.TextBox ArticleTitle;
         
         /// <summary>
-        /// DetailsHeading control.
+        /// ArticleCountry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DetailsHeading;
+        protected global::System.Web.UI.WebControls.TextBox ArticleCountry;
         
         /// <summary>
-        /// ListViewRelated control.
+        /// ArticleCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewRelated;
+        protected global::System.Web.UI.WebControls.TextBox ArticleCity;
         
         /// <summary>
-        /// PanelEditDelete control.
+        /// ArticleImageUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PanelEditDelete;
+        protected global::System.Web.UI.WebControls.TextBox ArticleImageUrl;
         
         /// <summary>
-        /// EditBtnLink control.
+        /// SecondPictureUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink EditBtnLink;
+        protected global::System.Web.UI.WebControls.TextBox SecondPictureUrl;
         
         /// <summary>
-        /// BtnDeleteArticle control.
+        /// ThirdPictureUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnDeleteArticle;
+        protected global::System.Web.UI.WebControls.TextBox ThirdPictureUrl;
         
         /// <summary>
-        /// ListViewArticleComments control.
+        /// CoverPictureUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewArticleComments;
+        protected global::System.Web.UI.WebControls.TextBox CoverPictureUrl;
         
         /// <summary>
-        /// BtnRevelCommentModal control.
+        /// ArticleContentMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRevelCommentModal;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContentMain;
         
         /// <summary>
-        /// NewCommentContent control.
+        /// ArticleContentMustSee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea NewCommentContent;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContentMustSee;
         
         /// <summary>
-        /// BtnSubmitNewComment control.
+        /// ArticleContentBudgetTips control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSubmitNewComment;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContentBudgetTips;
+        
+        /// <summary>
+        /// ArticleContentAccomodation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea ArticleContentAccomodation;
+        
+        /// <summary>
+        /// BtnEditArticleSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnEditArticleSubmit;
     }
 }

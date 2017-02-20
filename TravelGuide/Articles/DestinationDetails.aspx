@@ -75,6 +75,11 @@
             <%: this.Article.ContentAccomodation %>
         </div>
         <hr />
+        <div runat="server" id="PanelEditDelete" class="text-right" visible="true">
+            <asp:HyperLink Text="Edit" NavigateUrl="" ID="EditBtnLink" CssClass="btn btn-warning" runat="server" />
+            <asp:Button Text="Delete" CssClass="btn btn-danger" ID="BtnDeleteArticle" OnClick="BtnDeleteArticle_Click" runat="server" />
+            <hr />
+        </div>
         <div id="comments" class="row comment-panel-dest">
             <h4 class="text-center"><span class="glyphicon glyphicon-comment"></span>Comments</h4>
             <hr />

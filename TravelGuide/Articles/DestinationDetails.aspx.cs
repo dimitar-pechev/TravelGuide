@@ -55,6 +55,8 @@ namespace TravelGuide
 
             this.ListViewRelated.DataSource = relatedItems;
             this.ListViewRelated.DataBind();
+
+            this.EditBtnLink.NavigateUrl = $"~/articles/editarticle.aspx?id={this.Article.Id}";
         }
 
         private Guid GetGuidFromString(string str)
@@ -71,6 +73,12 @@ namespace TravelGuide
             this.articleService.AddComment(username, content, articleId);
             this.ListViewArticleComments.DataSource = this.Article.Comments;
             this.ListViewArticleComments.DataBind();
+        }
+
+        protected void BtnDeleteArticle_Click(object sender, EventArgs e)
+        {
+            this.articleService.DeleteArticle(Article);
+            this.Response.Redirect("~/Articles/CitiesAndSites.aspx");
         }
     }
 }

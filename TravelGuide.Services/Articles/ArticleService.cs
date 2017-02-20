@@ -96,9 +96,25 @@ namespace TravelGuide.Services.Articles
             this.context.SaveChanges();
         }
 
-        public void EditArticle(Article article)
+        public void EditArticle(Guid articleId, string title, string city, string country, string contentMain,
+            string contentMustSee, string contentBudgetTips, string contentAccomodation,
+            string primaryImageUrl, string secondImageUrl, string thirdImageUrl, string coverImageUrl)
         {
-            throw new NotImplementedException();
+            var article = this.context.Articles.Find(articleId);
+
+            article.Title = title;
+            article.City = city;
+            article.Country = country;
+            article.ContentMain = contentMain;
+            article.ContentMustSee = contentMustSee;
+            article.ContentBudgetTips = contentBudgetTips;
+            article.ContentAccomodation = contentAccomodation;
+            article.PrimaryImageUrl = primaryImageUrl;
+            article.SecondImageUrl = secondImageUrl;
+            article.ThirdImageUrl = thirdImageUrl;
+            article.CoverImageUrl = coverImageUrl;
+
+            this.context.SaveChanges();
         }
 
         public IEnumerable<Article> GetAllArticles()
