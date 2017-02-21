@@ -502,3 +502,8 @@ body {
 #status-box > div {
     max-width: 600px;
 }
+
+.admin-container {
+    padding-top: 2%;
+    background-color: white;
+}

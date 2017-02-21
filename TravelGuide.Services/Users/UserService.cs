@@ -16,6 +16,18 @@ namespace TravelGuide.Services.Users
             this.context = context;
         }
 
+        public void DeleteUser(string userId)
+        {
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new ArgumentNullException();
+            }
+
+            var user = this.context.Users.Find(userId);
+            this.context.Users.Remove(user);
+            this.context.SaveChanges();
+        }
+
         public IEnumerable<User> GetAllUsers()
         {
             var users = this.context.Users.ToList();

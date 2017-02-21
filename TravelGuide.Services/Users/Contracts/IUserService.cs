@@ -13,5 +13,7 @@ namespace TravelGuide.Services.Users.Contracts
         IEnumerable<User> GetAllUsers();
 
         void UpdateUserInfo(string id, string firstName, string lastName, string phone, string address);
+
+        void DeleteUser(string userId);
     }
 }
