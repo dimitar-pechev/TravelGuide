@@ -79,6 +79,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Articles\ArticleServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\Articles\ArticleServiceTests\CreateArticle_Should.cs" />
+    <Compile Include="Services\Articles\ArticleServiceTests\DeleteArticle_Should.cs" />
+    <Compile Include="Services\Articles\ArticleServiceTests\EditArticle_Should.cs" />
     <Compile Include="Services\Articles\Mock\ExtendedArticleService.cs" />
   </ItemGroup>
   <ItemGroup>

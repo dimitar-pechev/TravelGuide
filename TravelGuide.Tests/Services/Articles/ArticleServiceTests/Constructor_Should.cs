@@ -16,10 +16,11 @@ namespace TravelGuide.Tests.Services.Articles.ArticleServiceTests
         {
             // Arrange
             var factoryMock = new Mock<IArticleFactory>();
+            var commentFactoryMock = new Mock<IArticleCommentFactory>();
 
-            //// Act & Assert
-            //var ex = Assert.Throws<ArgumentNullException>(() => new ArticleService(null, factoryMock.Object));
-            //StringAssert.Contains("DdContext", ex.Message);
+            // Act & Assert
+            var ex = Assert.Throws<ArgumentNullException>(() => new ArticleService(null, factoryMock.Object, commentFactoryMock.Object));
+            StringAssert.Contains("DdContext", ex.Message);
         }
 
         [Test]
@@ -27,10 +28,23 @@ namespace TravelGuide.Tests.Services.Articles.ArticleServiceTests
         {
             // Arrange
             var contextMock = new Mock<ITravelGuideContext>();
+            var commentFactoryMock = new Mock<IArticleCommentFactory>();
 
-            //// Act & Assert
-            //var ex = Assert.Throws<ArgumentNullException>(() => new ArticleService(contextMock.Object, null));
-            //StringAssert.Contains("factory", ex.Message);
+            // Act & Assert
+            var ex = Assert.Throws<ArgumentNullException>(() => new ArticleService(contextMock.Object, null, commentFactoryMock.Object));
+            StringAssert.Contains("factory", ex.Message);
+        }
+
+        [Test]
+        public void ThrowArgumentNullException_WhenPassedCommentFactoryIsNull()
+        {
+            // Arrange
+            var contextMock = new Mock<ITravelGuideContext>();
+            var factoryMock = new Mock<IArticleFactory>();
+
+            // Act & Assert
+            var ex = Assert.Throws<ArgumentNullException>(() => new ArticleService(contextMock.Object, factoryMock.Object, null));
+            StringAssert.Contains("factory", ex.Message);
         }
 
         [Test]
@@ -39,12 +53,13 @@ namespace TravelGuide.Tests.Services.Articles.ArticleServiceTests
             // Arrange
             var contextMock = new Mock<ITravelGuideContext>();
             var factoryMock = new Mock<IArticleFactory>();
+            var commentFactoryMock = new Mock<IArticleCommentFactory>();
 
-            //// Act 
-            //var service = new ArticleService(contextMock.Object, factoryMock.Object);
+            // Act 
+            var service = new ArticleService(contextMock.Object, factoryMock.Object, commentFactoryMock.Object);
 
-            //// Assert
-            //Assert.IsInstanceOf<ArticleService>(service);
+            // Assert
+            Assert.IsInstanceOf<ArticleService>(service);
         }
 
         [Test]
@@ -53,9 +68,10 @@ namespace TravelGuide.Tests.Services.Articles.ArticleServiceTests
             // Arrange
             var contextMock = new Mock<ITravelGuideContext>();
             var factoryMock = new Mock<IArticleFactory>();
+            var commentFactoryMock = new Mock<IArticleCommentFactory>();
 
             // Act 
-            var service = new ExtendedArticleService(contextMock.Object, factoryMock.Object);
+            var service = new ExtendedArticleService(contextMock.Object, factoryMock.Object, commentFactoryMock.Object);
 
             // Assert
             Assert.AreSame(contextMock.Object, service.Context);
@@ -67,12 +83,28 @@ namespace TravelGuide.Tests.Services.Articles.ArticleServiceTests
             // Arrange
             var contextMock = new Mock<ITravelGuideContext>();
             var factoryMock = new Mock<IArticleFactory>();
+            var commentFactoryMock = new Mock<IArticleCommentFactory>();
 
             // Act 
-            var service = new ExtendedArticleService(contextMock.Object, factoryMock.Object);
+            var service = new ExtendedArticleService(contextMock.Object, factoryMock.Object, commentFactoryMock.Object);
 
             // Assert
             Assert.AreSame(factoryMock.Object, service.ArticleFactory);
+        }
+
+        [Test]
+        public void AssignCorrectCommentFactoryValue_WhenPassedParamsAreValid()
+        {
+            // Arrange
+            var contextMock = new Mock<ITravelGuideContext>();
+            var factoryMock = new Mock<IArticleFactory>();
+            var commentFactoryMock = new Mock<IArticleCommentFactory>();
+
+            // Act 
+            var service = new ExtendedArticleService(contextMock.Object, factoryMock.Object, commentFactoryMock.Object);
+
+            // Assert
+            Assert.AreSame(commentFactoryMock.Object, service.CommentFactory);
         }
     }
 }

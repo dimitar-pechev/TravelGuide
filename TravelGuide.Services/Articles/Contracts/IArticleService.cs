@@ -14,7 +14,7 @@ namespace TravelGuide.Services.Contracts
 
         Article GetArticleById(Guid id);
 
-        void CreateArticle(string username, string title, string city, string country, string contentMain,
+        void CreateArticle(string id, string title, string city, string country, string contentMain,
             string contentMustSee, string contentBudgetTips, string contentAccomodation,
             string primaryImageUrl, string secondImageUrl, string thirdImageUrl, string coverImageUrl);
 

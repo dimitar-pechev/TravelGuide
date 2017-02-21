@@ -36,36 +36,71 @@ namespace TravelGuide.Services.Articles
             this.commentFactory = commentFactory;
         }
 
-        public void CreateArticle(string username, string title, string city, string country, string contentMain,
+        public void CreateArticle(string id, string title, string city, string country, string contentMain,
             string contentMustSee, string contentBudgetTips, string contentAccomodation,
             string primaryImageUrl, string secondImageUrl, string thirdImageUrl, string coverImageUrl)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(username.Trim()))
+            if (string.IsNullOrEmpty(id))
             {
                 throw new ArgumentNullException("Username cannot be null!");
             }
-            if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(title.Trim()) || title.Length < 2 || title.Length > 30)
+
+            if (string.IsNullOrEmpty(title))
             {
-                throw new ArgumentException("Title cannot be null, shorter than 2 symbols or greater than 30!");
+                throw new ArgumentNullException("Title cannot be null!");
             }
-            if (string.IsNullOrEmpty(city) || string.IsNullOrEmpty(city.Trim()) || city.Length < 2 || city.Length > 30)
+
+            if (string.IsNullOrEmpty(city))
             {
-                throw new ArgumentException("City name cannot be null, shorter than 2 symbols or greater than 30!");
+                throw new ArgumentNullException("City name cannot be null!");
             }
-            if (string.IsNullOrEmpty(country) || string.IsNullOrEmpty(country.Trim()) || country.Length < 2 || country.Length > 30)
+
+            if (string.IsNullOrEmpty(country))
             {
-                throw new ArgumentException("Country name cannot be null, shorter than 2 symbols or greater than 30!");
+                throw new ArgumentNullException("Country name cannot be null!");
             }
-            if (string.IsNullOrEmpty(contentMain) || string.IsNullOrEmpty(contentMain.Trim()) || contentMain.Length < 50 || contentMain.Length > 5000)
+
+            if (string.IsNullOrEmpty(contentMain))
             {
-                throw new ArgumentException("Content cannot be null, shorter than 50 symbols or greater than 5000!");
+                throw new ArgumentNullException("Content cannot be null!");
             }
-            if (string.IsNullOrEmpty(primaryImageUrl) || string.IsNullOrEmpty(primaryImageUrl.Trim()))
+
+            if (string.IsNullOrEmpty(contentMustSee))
+            {
+                throw new ArgumentNullException("Content cannot be null!");
+            }
+
+            if (string.IsNullOrEmpty(contentBudgetTips))
+            {
+                throw new ArgumentNullException("Content cannot be null!");
+            }
+
+            if (string.IsNullOrEmpty(contentAccomodation))
+            {
+                throw new ArgumentNullException("Content cannot be null!");
+            }    
+                    
+            if (string.IsNullOrEmpty(primaryImageUrl))
             {
                 throw new ArgumentNullException("ImageUrl cannot be null!");
             }
 
-            var user = this.context.Users.FirstOrDefault(x => x.UserName == username);
+            if (string.IsNullOrEmpty(secondImageUrl))
+            {
+                throw new ArgumentNullException("ImageUrl cannot be null!");
+            }
+
+            if (string.IsNullOrEmpty(thirdImageUrl))
+            {
+                throw new ArgumentNullException("ImageUrl cannot be null!");
+            }
+
+            if (string.IsNullOrEmpty(coverImageUrl))
+            {
+                throw new ArgumentNullException("ImageUrl cannot be null!");
+            }
+
+            var user = this.context.Users.Find(id);
             if (user == null)
             {
                 throw new InvalidOperationException("Only logged in users can create articles!");
@@ -101,6 +136,11 @@ namespace TravelGuide.Services.Articles
             string primaryImageUrl, string secondImageUrl, string thirdImageUrl, string coverImageUrl)
         {
             var article = this.context.Articles.Find(articleId);
+
+            if (article == null)
+            {
+                throw new InvalidOperationException("No such article found!");
+            }
 
             article.Title = title;
             article.City = city;

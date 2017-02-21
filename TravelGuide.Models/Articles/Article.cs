@@ -6,7 +6,7 @@ namespace TravelGuide.Models.Articles
 {
     public class Article : IArticle
     {
-        protected Article()
+        public Article()
         {
             this.Id = Guid.NewGuid();
             this.CreatedOn = DateTime.Now;

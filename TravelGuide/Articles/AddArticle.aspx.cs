@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using Microsoft.AspNet.Identity;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace TravelGuide
 
         protected void BtnSubmitNewArticle_Click(object sender, EventArgs e)
         {
-            var username = this.User.Identity.Name;
+            var userId = this.User.Identity.GetUserId();
             var title = this.ArticleTitle.Text;
             var city = this.ArticleCity.Text;
             var country = this.ArticleCountry.Text;
@@ -39,7 +40,7 @@ namespace TravelGuide
             var thirdImageUrl = this.ThirdPictureUrl.Text;
             var coverImageUrl = this.CoverPictureUrl.Text;
 
-            this.articleService.CreateArticle(username, title, city, country, contentMain, contentMustSee, contentTips,
+            this.articleService.CreateArticle(userId, title, city, country, contentMain, contentMustSee, contentTips,
                 contentAccomodation, primaryImageUrl, secondImageUrl, thirdImageUrl, coverImageUrl);
             this.Response.Redirect("~/Articles/CitiesAndSites.aspx");
         }

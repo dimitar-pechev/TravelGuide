@@ -6,8 +6,8 @@ namespace TravelGuide.Tests.Services.Articles.Mock
 {
     public class ExtendedArticleService : ArticleService
     {
-        public ExtendedArticleService(ITravelGuideContext context, IArticleFactory articleFactory)
-            : base(context, articleFactory, null)
+        public ExtendedArticleService(ITravelGuideContext context, IArticleFactory articleFactory, IArticleCommentFactory commentFactory)
+            : base(context, articleFactory, commentFactory)
         {
         }
 
@@ -24,6 +24,14 @@ namespace TravelGuide.Tests.Services.Articles.Mock
             get
             {
                 return base.articleFactory;
+            }
+        }
+
+        public IArticleCommentFactory CommentFactory
+        {
+            get
+            {
+                return base.commentFactory;
             }
         }
     }
