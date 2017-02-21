@@ -255,6 +255,7 @@
     <Content Include="Store\AddItem.aspx" />
     <Content Include="Store\AllItems.aspx" />
     <Content Include="Store\Details.aspx" />
+    <Content Include="Store\EditItem.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -424,6 +425,13 @@
     </Compile>
     <Compile Include="Store\Details.aspx.designer.cs">
       <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\EditItem.aspx.cs">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\EditItem.aspx.designer.cs">
+      <DependentUpon>EditItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

@@ -1,12 +1,12 @@
-﻿<%@ Page Title="Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddItem.aspx.cs" Inherits="TravelGuide.Store.AddItem" %>
+﻿<%@ Page Title="Edit Item" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditItem.aspx.cs" Inherits="TravelGuide.Store.EditItem" %>
 
-<asp:Content ID="AddItemPage" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="EditItem" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="row card-only">
             <div class="col-md-6 col-md-offset-3 text-center">
                 <div class="card">
                     <div class="card-content form-add">
-                        <h4>Add a New Store Item</h4>
+                        <h4>Edit Store Item</h4>
                         <p runat="server" id="ErrorMessage" visible="false" style="color: red;">An error occured! Please correct your data and try again!</p>
                         <hr />
                         <asp:Label Text="Item Name" AssociatedControlID="NewItemName" runat="server" />
@@ -26,7 +26,7 @@
                         <br />
                         <asp:Label Text="Short Description" AssociatedControlID="NewItemDescription" runat="server" />
                         <textarea runat="server" id="NewItemDescription" rows="3" class="form-control" />
-                        <asp:Button Text="Add" CssClass="btn btn-success btn-login" ID="BtnAddNewItem" OnClick="BtnAddNewItem_Click" runat="server" />
+                        <asp:Button Text="Submit" CssClass="btn btn-success btn-login" ID="BtnEditItem" OnClick="BtnEditItem_Click" runat="server" />
                     </div>
                 </div>
             </div>

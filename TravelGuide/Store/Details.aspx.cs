@@ -31,6 +31,15 @@ namespace TravelGuide.Store
             {
                 var id = GetGuidFromString(this.Request.QueryString["id"]);
                 this.StoreItem = this.storeService.GetStoreItemById(id);
+                if (StoreItem.InStock)
+                {
+                    this.BuyDetails.Visible = true;
+                }
+                else
+                {
+                    this.BuyDetails.Visible = false;
+                }
+
                 this.DataBind();
             }
             catch (Exception)
@@ -50,6 +59,29 @@ namespace TravelGuide.Store
             var cookiePrev = this.Request.Cookies[CookieName + this.User.Identity.Name];
             var cookie = this.cartService.WriteCookie(cookiePrev, this.User.Identity.Name, this.StoreItem.Id.ToString());
             this.Response.Cookies.Add(cookie);
+        }
+
+        protected void BtnDelete_Click(object sender, EventArgs e)
+        {
+            this.storeService.DeleteItem(StoreItem.Id);
+            this.Response.Redirect("~/Store/AllItems.aspx");
+        }
+
+        protected void BtnSubmitStatusChange_Click(object sender, EventArgs e)
+        {
+            var status = this.StatusOptions.SelectedValue;
+            this.storeService.ChangeStatus(StoreItem.Id, status);
+            StoreItem = this.storeService.GetStoreItemById(StoreItem.Id);
+            this.DataBind();
+
+            if (StoreItem.InStock)
+            {
+                this.BuyDetails.Visible = true;
+            }
+            else
+            {
+                this.BuyDetails.Visible = false;
+            }
         }
     }
 }

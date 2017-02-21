@@ -10,78 +10,78 @@
 namespace TravelGuide.Store {
     
     
-    public partial class Details {
+    public partial class EditItem {
         
         /// <summary>
-        /// BuyDetails control.
+        /// ErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl BuyDetails;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorMessage;
         
         /// <summary>
-        /// QuantityWanted control.
+        /// NewItemName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl QuantityWanted;
+        protected global::System.Web.UI.WebControls.TextBox NewItemName;
         
         /// <summary>
-        /// BtnAddToCart control.
+        /// NewItemDestFor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAddToCart;
+        protected global::System.Web.UI.WebControls.TextBox NewItemDestFor;
         
         /// <summary>
-        /// AdminOptionsPanel control.
+        /// NewItemBrand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AdminOptionsPanel;
+        protected global::System.Web.UI.WebControls.TextBox NewItemBrand;
         
         /// <summary>
-        /// BtnChangeStatusReveal control.
+        /// NewItemImageUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnChangeStatusReveal;
+        protected global::System.Web.UI.WebControls.TextBox NewItemImageUrl;
         
         /// <summary>
-        /// BtnDelete control.
+        /// NewItemPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnDelete;
+        protected global::System.Web.UI.WebControls.TextBox NewItemPrice;
         
         /// <summary>
-        /// StatusOptions control.
+        /// NewItemDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList StatusOptions;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea NewItemDescription;
         
         /// <summary>
-        /// BtnSubmitStatusChange control.
+        /// BtnEditItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSubmitStatusChange;
+        protected global::System.Web.UI.WebControls.Button BtnEditItem;
     }
 }

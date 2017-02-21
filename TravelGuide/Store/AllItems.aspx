@@ -58,7 +58,7 @@
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
                     <asp:DataPager ID="DataPagerStore" runat="server"
-                        PagedControlID="ListViewStoreItems" PageSize="12"
+                        PagedControlID="ListViewStoreItems" PageSize="6"
                         QueryStringField="page">
                         <Fields>
                             <asp:NextPreviousPagerField ShowFirstPageButton="false"

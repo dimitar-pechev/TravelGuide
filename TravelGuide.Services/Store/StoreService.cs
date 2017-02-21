@@ -35,34 +35,59 @@ namespace TravelGuide.Services.Store
             return true;
         }
 
-        public void ChangeStatus(StoreItem item)
+        public void ChangeStatus(Guid itemId, string option)
         {
-            if (item == null)
+            if (itemId == null)
             {
                 throw new ArgumentNullException("Passed store item cannot be null!");
             }
 
-            if (item.InStock)
+            if (option != "true" && option != "false")
             {
-                item.InStock = false;
+                throw new ArgumentException();
             }
-            else
-            {
-                item.InStock = true;
-            }
+
+            var status = bool.Parse(option);
+            var item = this.context.StoreItems.Find(itemId);
+            item.InStock = status;
 
             this.context.SaveChanges();
         }
 
-        public void DeleteItem(StoreItem item)
+        public void DeleteItem(Guid itemId)
         {
-            if (item == null)
+            if (itemId == null)
             {
                 throw new ArgumentNullException("Passed store item cannot be null!");
             }
 
+            var item = this.context.StoreItems.Find(itemId);
+
             item.IsDeleted = true;
             this.context.SaveChanges();
+        }
+
+        public bool EditItem(StoreItem item, string itemName, string description, string destFor, string imageUrl, string brand, string price)
+        {
+            double parsedPrice;
+            var isParsable = double.TryParse(price, out parsedPrice);
+
+            if (!isParsable)
+            {
+                return false;
+            }
+
+            var storeItem = this.context.StoreItems.Find(item.Id);
+
+            storeItem.ItemName = itemName;
+            storeItem.Description = description;
+            storeItem.DestinationFor = destFor;
+            storeItem.ImageUrl = imageUrl;
+            storeItem.Brand = brand;
+            storeItem.Price = parsedPrice;
+
+            this.context.SaveChanges();
+            return true;
         }
 
         public IEnumerable<StoreItem> GetAllNotDeletedStoreItemsOrderedByDate()

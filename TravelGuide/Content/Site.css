@@ -498,3 +498,7 @@ body {
     padding-right: 10%;
     margin-bottom: 5%;
 }
+
+#status-box > div {
+    max-width: 600px;
+}

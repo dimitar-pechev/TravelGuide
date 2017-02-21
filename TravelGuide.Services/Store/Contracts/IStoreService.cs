@@ -12,11 +12,13 @@ namespace TravelGuide.Services.Store.Contracts
 
         StoreItem GetStoreItemById(Guid id);        
         
-        void DeleteItem(StoreItem item);
+        void DeleteItem(Guid itemId);
+
+        bool EditItem(StoreItem item, string itemName, string description, string destFor, string imageUrl, string brand, string price);
 
         bool AddNewItem(string itemName, string description, string destFor, string imageUrl, string brand, string price);
 
-        void ChangeStatus(StoreItem item);
+        void ChangeStatus(Guid itemId, string option);
 
         IEnumerable<StoreItem> GetByDestination(string targetDestination);
     }

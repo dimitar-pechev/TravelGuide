@@ -37,6 +37,7 @@ namespace TravelGuide.Store
 
             if (!isSuccessful)
             {
+                this.ErrorMessage.Visible = true;
                 return;
             }
 
