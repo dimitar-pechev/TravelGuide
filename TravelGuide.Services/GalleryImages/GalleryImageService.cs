@@ -106,5 +106,15 @@ namespace TravelGuide.Services.GalleryImages
             this.context.GalleryImages.Add(image);
             this.context.SaveChanges();
         }
+
+        public void DeleteComment(string commentId)
+        {
+            var parsedId = Guid.Parse(commentId);
+
+            var comment = this.context.GalleryComments.Find(parsedId);
+            this.context.GalleryComments.Remove(comment);
+
+            this.context.SaveChanges();
+        }
     }
 }

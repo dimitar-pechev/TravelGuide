@@ -27,8 +27,8 @@
                 </div>
                 <asp:Panel runat="server" ID="CommentsPanel" Visible="false">
                     <hr />
-                    <asp:ListView runat="server" ID="ListViewGalleryComments"
-                        ItemType="TravelGuide.Models.Gallery.GalleryComment">
+                    <asp:ListView runat="server" ID="ListViewGalleryComments" OnItemDeleting="ListViewGalleryComments_ItemDeleting"
+                        ItemType="TravelGuide.Models.Gallery.GalleryComment" DataKeyNames="Id">
                         <LayoutTemplate>
                             <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
                         </LayoutTemplate>
@@ -44,6 +44,8 @@
                                         <asp:Label Text='<%#: Item.Content %>' runat="server" />
                                     </p>
                                     <div class="text-right">
+                                        <asp:Button Text="Delete" CommandName="Delete" ID="BtnDeleteGalleryComment"
+                                            CssClass="pull-left btn btn-danger btn-sm" runat="server" />
                                         <asp:Label Text='<%#: Item.User.UserName %>' runat="server" />
                                         <br />
                                         <asp:Label Text='<%#: Item.CreatedOn %>' runat="server" />

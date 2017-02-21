@@ -20,23 +20,18 @@ namespace TravelGuide.Gallery
             this.service = NinjectWebCommon.Kernel.Get<IGalleryImageService>();
         }
 
-        public GalleryImage Image { get; set; }
+        public static GalleryImage Image { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (this.Page.IsPostBack)
             {
-                var id = GetGuidFromString(this.Request.QueryString["id"]);
-                this.Image = this.service.GetGalleryImageById(id);
-                this.ListViewGalleryComments.DataSource = Image.Comments;
-                this.DataBind();
+                return;
             }
-            catch (Exception)
-            {
-                this.Response.Redirect("~/Gallery/AllPhotos.aspx");
-            }
+
+            this.BindToNewData();
         }
-        
+
         private Guid GetGuidFromString(string str)
         {
             var id = Guid.Parse(str);
@@ -45,8 +40,8 @@ namespace TravelGuide.Gallery
 
         protected void BtnLikeImage_Click(object sender, EventArgs e)
         {
-            this.service.ToggleLike(this.User.Identity.Name, this.Image.Id);
-            this.DataBind();
+            this.service.ToggleLike(this.User.Identity.Name, Image.Id);
+            this.BindToNewData();
         }
 
         protected void BtnCommentImage_Click(object sender, EventArgs e)
@@ -56,20 +51,50 @@ namespace TravelGuide.Gallery
                 this.CommentsPanel.Visible = false;
                 return;
             }
-            
+
             this.CommentsPanel.Visible = true;
+            this.BindToNewData();
         }
 
         protected void BtnDeleteImage_Click(object sender, EventArgs e)
         {
-            this.service.DeleteImage(this.Image);
+            this.service.DeleteImage(Image);
             this.Response.Redirect("~/Gallery/AllPhotos.aspx");
         }
 
         protected void BtnSubmitNewComment_Click(object sender, EventArgs e)
         {
-            this.service.AddComment(this.User.Identity.Name, this.NewCommentContent.Value.Trim(), this.Image.Id);
-            this.DataBind();
+            this.service.AddComment(this.User.Identity.Name, this.NewCommentContent.Value.Trim(), Image.Id);
+            this.BindToNewData();
+        }
+
+        protected void ListViewGalleryComments_ItemDeleting(object sender, ListViewDeleteEventArgs e)
+        {
+            var id = string.Empty;
+            foreach (var item in e.Keys.Values)
+            {
+                id = item.ToString();
+            }
+
+            this.service.DeleteComment(id);
+
+            this.BindToNewData();
+            this.Response.Redirect($"~/Gallery/Details.aspx?id={Image.Id.ToString()}");
+        }
+
+        private void BindToNewData()
+        {
+            try
+            {
+                var id = GetGuidFromString(this.Request.QueryString["id"]);
+                Image = this.service.GetGalleryImageById(id);
+                this.ListViewGalleryComments.DataSource = Image.Comments;
+                this.DataBind();
+            }
+            catch (Exception)
+            {
+                this.Response.Redirect("~/Gallery/AllPhotos.aspx");
+            }
         }
     }
 }
