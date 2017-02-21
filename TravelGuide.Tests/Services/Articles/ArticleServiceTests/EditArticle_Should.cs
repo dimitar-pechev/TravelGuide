@@ -1,6 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using TravelGuide.Data;
 using TravelGuide.Models.Articles;
 using TravelGuide.Services.Articles;

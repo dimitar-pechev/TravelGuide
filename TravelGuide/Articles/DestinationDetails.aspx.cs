@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using Microsoft.AspNet.Identity;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -82,10 +83,10 @@ namespace TravelGuide
 
         protected void BtnSubmitNewComment_Click(object sender, EventArgs e)
         {
-            var username = this.User.Identity.Name;
+            var id = this.User.Identity.GetUserId();
             var content = this.NewCommentContent.Value;
             var articleId = this.Article.Id;
-            this.articleService.AddComment(username, content, articleId);
+            this.articleService.AddComment(id, content, articleId);
             this.ListViewArticleComments.DataSource = this.Article.Comments;
             this.ListViewArticleComments.DataBind();
         }

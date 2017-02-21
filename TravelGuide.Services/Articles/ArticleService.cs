@@ -78,8 +78,8 @@ namespace TravelGuide.Services.Articles
             if (string.IsNullOrEmpty(contentAccomodation))
             {
                 throw new ArgumentNullException("Content cannot be null!");
-            }    
-                    
+            }
+
             if (string.IsNullOrEmpty(primaryImageUrl))
             {
                 throw new ArgumentNullException("ImageUrl cannot be null!");
@@ -173,18 +173,19 @@ namespace TravelGuide.Services.Articles
 
         public Article GetArticleById(Guid id)
         {
-            if (id == null)
-            {
-                throw new InvalidOperationException("Passed guid cannot be null!");
-            }
-
             var article = this.context.Articles.Find(id);
             return article;
         }
 
-        public void AddComment(string username, string content, Guid articleId)
+        public void AddComment(string id, string content, Guid articleId)
         {
-            var user = this.context.Users.FirstOrDefault(x => x.UserName == username);
+            var user = this.context.Users.Find(id);
+
+            if (user == null)
+            {
+                throw new InvalidOperationException();
+            }
+
             var parsedId = Guid.Parse(user.Id);
 
             var comment = this.commentFactory.CreateArticleComment(parsedId, user, content, articleId);
@@ -206,6 +207,7 @@ namespace TravelGuide.Services.Articles
                 .Where(x => x.City.ToLower().Contains(keywordToLower) ||
                 x.Country.ToLower().Contains(keywordToLower) ||
                 x.Title.ToLower().Contains(keywordToLower))
+                .Where(x => !x.IsDeleted)
                 .ToList();
 
             return articles;
@@ -213,8 +215,18 @@ namespace TravelGuide.Services.Articles
 
         public void DeleteComment(string commentId)
         {
+            if (string.IsNullOrEmpty(commentId))
+            {
+                throw new ArgumentNullException();
+            }
+
             var id = Guid.Parse(commentId);
             var comment = this.context.Comments.Find(id);
+
+            if (comment == null)
+            {
+                throw new InvalidOperationException();
+            }
 
             this.context.Comments.Remove(comment);
             this.context.SaveChanges();
