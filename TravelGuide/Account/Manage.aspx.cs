@@ -8,6 +8,7 @@ using TravelGuide.Services.Users.Contracts;
 using TravelGuide.Services.Store.Contracts;
 using TravelGuide.App_Start;
 using Ninject;
+using System.Linq;
 
 namespace TravelGuide.Account
 {
@@ -73,7 +74,8 @@ namespace TravelGuide.Account
             this.PanelRequest.Visible = true;
             this.EditProfilePanel.Visible = false;
             this.ResultLabel.Visible = false;
-            this.ListViewRequests.DataSource = this.requestService.GetAllRequests();
+            var user = this.userService.GetById(this.User.Identity.GetUserId());
+            this.ListViewRequests.DataSource = user.Requests.ToList();
             this.ListViewRequests.DataBind();
         }
 
