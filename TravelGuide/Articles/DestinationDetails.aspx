@@ -10,11 +10,11 @@
         <hr />
         <div class="row text-center">
             <ul class="list-inline list-content-topics">
-                <li><a href="#about"><span class="glyphicon glyphicon-globe"></span>About</a></li>
-                <li><a href="#must-see"><span class="glyphicon glyphicon-camera"></span>Must-See Places</a></li>
-                <li><a href="#tips"><span class="glyphicon glyphicon-euro"></span>Budget Tips</a></li>
-                <li><a href="#accomodation"><span class="glyphicon glyphicon-home"></span>Accomodation</a></li>
-                <li><a href="#comments"><span class="glyphicon glyphicon-comment"></span>Comments</a></li>
+                <li><a href="#about"><span class="glyphicon glyphicon-globe"></span> About</a></li>
+                <li><a href="#must-see"><span class="glyphicon glyphicon-camera"></span> Must-See Places</a></li>
+                <li><a href="#tips"><span class="glyphicon glyphicon-euro"></span> Budget Tips</a></li>
+                <li><a href="#accomodation"><span class="glyphicon glyphicon-home"></span> Accomodation</a></li>
+                <li><a href="#comments"><span class="glyphicon glyphicon-comment"></span> Comments</a></li>
             </ul>
             <hr />
         </div>
@@ -53,26 +53,26 @@
                     </asp:ListView>
                 </div>
             </div>
-            <p id="about"><span class="glyphicon glyphicon-globe"></span><%:this.Article.Title %></p>
+            <p id="about"><span class="glyphicon glyphicon-globe"></span> <%:this.Article.Title %></p>
             <%: this.Article.ContentMain %>
         </div>
         <hr />
         <div class="row article-text">
             <img src="<%: this.Article.SecondImageUrl %>" data-toggle="modal" data-target="#details-photo"
                 class="thumb-photo thumbnail thumb-photo-right img-responsive" alt="Alternate Text" />
-            <p id="must-see"><span class="glyphicon glyphicon-camera"></span>The places you absolutely must visit in <%: this.Article.City %></p>
+            <p id="must-see"><span class="glyphicon glyphicon-camera"></span> The places you absolutely must visit in <%: this.Article.City %></p>
             <%: this.Article.ContentMustSee %>
         </div>
         <hr />
         <div class="row article-text">
-            <p id="tips"><span class="glyphicon glyphicon-euro"></span>Our assessment on the budget needed...</p>
+            <p id="tips"><span class="glyphicon glyphicon-euro"></span> Our assessment on the budget needed...</p>
             <%: this.Article.ContentBudgetTips %>
         </div>
         <hr />
         <div class="row article-text">
             <img src="<%: this.Article.ThirdImageUrl %>" data-toggle="modal" data-target="#details-photo"
                 class="thumb-photo thumbnail thumb-photo-left img-responsive" alt="Alternate Text" />
-            <p id="accomodation"><span class="glyphicon glyphicon-home"></span>Finally, a few tips on the accomodation in <%: this.Article.City %></p>
+            <p id="accomodation"><span class="glyphicon glyphicon-home"></span> Finally, a few tips on the accomodation in <%: this.Article.City %></p>
             <%: this.Article.ContentAccomodation %>
         </div>
         <hr />
@@ -82,7 +82,7 @@
             <hr />
         </div>
         <div id="comments" class="row comment-panel-dest">
-            <h4 class="text-center"><span class="glyphicon glyphicon-comment"></span>Comments</h4>
+            <h4 class="text-center"><span class="glyphicon glyphicon-comment"></span> Comments</h4>
             <hr />
             <asp:ListView runat="server" ID="ListViewArticleComments" DataKeyNames="Id" OnItemDeleting="ListViewArticleComments_ItemDeleting"
                 ItemType="TravelGuide.Models.Articles.ArticleComment">
@@ -95,7 +95,7 @@
                     </div>
                 </EmptyDataTemplate>
                 <ItemTemplate>
-                    <div class="card">
+                    <div class="card comment-box">
                         <div class="card-content">
                             <p class="text-center">
                                 <asp:Label Text='<%#: Item.Content %>' runat="server" />

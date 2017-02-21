@@ -13,7 +13,7 @@
                             <div class="card-content img-cont">
                                 <img src="/Images/1.jpg" class="img-responsive" alt="Alternate Text" />
                             </div>
-                            <div class="card-content text-center">
+                            <div class="card-content text-center nav-text">
                                 <p>Read on our destinations</p>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                             <div class="card-content img-cont">
                                 <img src="/Images/2.jpg" class="img-responsive" alt="Alternate Text" />
                             </div>
-                            <div class="card-content text-center">
+                            <div class="card-content text-center nav-text">
                                 <p>Share with us your photos</p>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                             <div class="card-content img-cont">
                                 <img src="/Images/3.jpg" class="img-responsive" alt="Alternate Text" />
                             </div>
-                            <div class="card-content text-center">
+                            <div class="card-content text-center nav-text">
                                 <p>Browse through our trip products</p>
                             </div>
                         </div>

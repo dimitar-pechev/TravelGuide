@@ -199,7 +199,7 @@ namespace TravelGuide.Services.Articles
         {
             if (string.IsNullOrEmpty(keyword) || string.IsNullOrEmpty(keyword.Trim()))
             {
-                return this.context.Articles.ToList();
+                return this.context.Articles.Where(x => !x.IsDeleted).ToList();
             }
 
             var keywordToLower = keyword.ToLower();

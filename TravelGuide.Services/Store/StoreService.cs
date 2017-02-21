@@ -113,7 +113,7 @@ namespace TravelGuide.Services.Store
         {
             if (string.IsNullOrEmpty(keyword) || string.IsNullOrEmpty(keyword.Trim()))
             {
-                return this.context.StoreItems.ToList();
+                return this.context.StoreItems.Where(x => !x.IsDeleted).ToList();
             }
 
             var keywordToLower = keyword.ToLower();
@@ -122,6 +122,7 @@ namespace TravelGuide.Services.Store
                 x.Description.ToLower().Contains(keywordToLower) ||
                 x.DestinationFor.ToLower().Contains(keywordToLower) ||
                 x.ItemName.ToLower().Contains(keywordToLower))
+                .Where(x => !x.IsDeleted)
                 .ToList();
 
             return items;

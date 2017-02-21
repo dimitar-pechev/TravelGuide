@@ -30,8 +30,8 @@
                 </div>
                 <div runat="server" visible="false" id="AdminOptionsPanel">
                     <h4 class="text-center">Admin Options</h4>
-                    <asp:HyperLink Text="Edit" NavigateUrl='<%#: string.Format($"~/Store/EditItem.aspx?id={StoreItem.Id}") %>' CssClass="btn btn-default" runat="server" />
-                    <asp:Button Text="Change Status" CssClass="btn btn-default" data-toggle="modal" data-target="#status-box"
+                    <asp:HyperLink Text="Edit" NavigateUrl='<%#: string.Format($"~/Store/EditItem.aspx?id={StoreItem.Id}") %>' CssClass="btn btn-default black" runat="server" />
+                    <asp:Button Text="Change Status" CssClass="btn btn-default black" data-toggle="modal" data-target="#status-box"
                         ID="BtnChangeStatusReveal" runat="server" />
                     <asp:Button Text="Delete" CssClass="btn btn-danger" ID="BtnDelete" OnClick="BtnDelete_Click" runat="server" />
                 </div>

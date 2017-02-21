@@ -38,7 +38,7 @@
                             </div>
                         </EmptyDataTemplate>
                         <ItemTemplate>
-                            <div class="card">
+                            <div class="card comment-box">
                                 <div class="card-content">
                                     <p class="text-center">
                                         <asp:Label Text='<%#: Item.Content %>' runat="server" />
