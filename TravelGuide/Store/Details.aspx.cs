@@ -46,6 +46,12 @@ namespace TravelGuide.Store
             {
                 this.Response.Redirect("~/Store/AllItems.aspx");
             }
+
+            if (!this.Page.IsPostBack)
+            {
+                this.QuantityWanted.Value = "1";
+            }
+
         }
 
         private Guid GetGuidFromString(string str)
@@ -57,7 +63,8 @@ namespace TravelGuide.Store
         protected void BtnAddToCart_Click(object sender, EventArgs e)
         {
             var cookiePrev = this.Request.Cookies[CookieName + this.User.Identity.Name];
-            var cookie = this.cartService.WriteCookie(cookiePrev, this.User.Identity.Name, this.StoreItem.Id.ToString());
+            var quantity = this.QuantityWanted.Value;
+            var cookie = this.cartService.WriteCookie(cookiePrev, this.User.Identity.Name, this.StoreItem.Id.ToString(), quantity);
             this.Response.Cookies.Add(cookie);
         }
 

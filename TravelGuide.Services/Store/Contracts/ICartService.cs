@@ -6,7 +6,7 @@ namespace TravelGuide.Services.Store.Contracts
 {
     public interface ICartService
     {
-        HttpCookie WriteCookie(HttpCookie cookie, string username, string itemId);
+        HttpCookie WriteCookie(HttpCookie cookie, string username, string itemId, string quantity);
         
         IEnumerable<StoreItem> extractItemsFromCookie(HttpCookie cookie);
 

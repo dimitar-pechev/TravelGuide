@@ -37,16 +37,30 @@ namespace TravelGuide.Services.Store
             return items;
         }
 
-        public HttpCookie WriteCookie(HttpCookie cookie, string username, string itemId)
+        public HttpCookie WriteCookie(HttpCookie cookie, string username, string itemId, string quantity)
         {
+            int parsedQuantity;
+            var isParsed = int.TryParse(quantity, out parsedQuantity);
+
+            if (!isParsed)
+            {
+                throw new ArgumentException();
+            }
+
+            var items = new List<string>();
+            for (int i = 0; i < parsedQuantity; i++)
+            {
+                items.Add(itemId);
+            }
+
             if (cookie == null || !cookie.Name.Contains(CookieName))
             {
-                cookie = new HttpCookie(CookieName + username, itemId);
+                cookie = new HttpCookie(CookieName + username, string.Join(",", items));
             }
             else
             {
                 var temp = cookie.Value;
-                cookie.Value = $"{temp},{itemId}";
+                cookie.Value = $"{temp},{string.Join(",", items)}";
             }
 
             cookie.Expires = DateTime.Now.AddDays(7);
