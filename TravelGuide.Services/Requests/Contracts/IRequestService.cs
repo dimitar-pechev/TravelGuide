@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TravelGuide.Models.Requests;
 using TravelGuide.Models.Store;
 
@@ -9,5 +10,7 @@ namespace TravelGuide.Services.Requests.Contracts
         void MakeRequest(StoreItem item, string username, string firstName, string lastName, string phone, string address);
 
         IEnumerable<Request> GetAllRequests();
+
+        void ChangeStatus(Guid requestId, string option);
     }
 }

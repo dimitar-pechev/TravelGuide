@@ -15,5 +15,7 @@ namespace TravelGuide.Services.Users.Contracts
         void UpdateUserInfo(string id, string firstName, string lastName, string phone, string address);
 
         void DeleteUser(string userId);
+
+        void ActivateAccount(string userId);
     }
 }

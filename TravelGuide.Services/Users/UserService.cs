@@ -24,7 +24,19 @@ namespace TravelGuide.Services.Users
             }
 
             var user = this.context.Users.Find(userId);
-            this.context.Users.Remove(user);
+            user.IsDeleted = true;
+            this.context.SaveChanges();
+        }
+
+        public void ActivateAccount(string userId)
+        {
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new ArgumentNullException();
+            }
+
+            var user = this.context.Users.Find(userId);
+            user.IsDeleted = false;
             this.context.SaveChanges();
         }
 

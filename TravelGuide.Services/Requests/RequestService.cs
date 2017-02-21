@@ -37,5 +37,12 @@ namespace TravelGuide.Services.Requests
             var requests = this.context.Requests.ToList();
             return requests;
         }
+
+        public void ChangeStatus(Guid requestId, string option)
+        {
+            var request = this.context.Requests.Find(requestId);
+            request.Status = option;
+            this.context.SaveChanges();
+        }
     }
 }
