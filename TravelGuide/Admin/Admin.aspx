@@ -51,7 +51,8 @@
                             </asp:ListView>
                         </div>
                         <div class="tab-pane fade" role="tabpanel" id="requests" aria-labelledby="requests-tab">
-                            <asp:ListView runat="server" ID="ListViewRequests" OnItemEditing="ListViewRequests_ItemEditing" ItemType="TravelGuide.Models.Requests.Request">
+                            <asp:ListView runat="server" ID="ListViewRequests" OnItemUpdating="ListViewRequests_ItemUpdating" DataKeyNames="Id"
+                                 ItemType="TravelGuide.Models.Requests.Request">
                                 <LayoutTemplate>
                                     <table class="table table-responsive table-bordered table-hover">
                                         <thead>
@@ -77,7 +78,7 @@
                                         <td><%#: Item.Address %></td>
                                         <td><%#: Item.Status %></td>
                                         <td class="text-center">
-                                            <asp:Button Text="Change Status" CommandName="Edit" CssClass="btn btn-success btn-sm" ID="BtnChangeStatus" runat="server" />
+                                            <asp:Button Text="Conifrm order" CommandName="Update" CssClass="btn btn-success btn-sm" ID="BtnChangeStatus" runat="server" />
                                         </td>
                                     </tr>
                                 </ItemTemplate>

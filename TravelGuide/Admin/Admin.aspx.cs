@@ -51,9 +51,15 @@ namespace TravelGuide.Admin
             this.ListViewUsers.DataBind();
         }
 
-        protected void ListViewRequests_ItemEditing(object sender, ListViewEditEventArgs e)
+        protected void ListViewRequests_ItemUpdating(object sender, ListViewUpdateEventArgs e)
         {
+            var id = string.Empty;
+            foreach (var item in e.Keys.Values)
+            {
+                id = item.ToString();
+            }
 
+            this.requestService.ChangeStatus(id);
         }
     }
 }

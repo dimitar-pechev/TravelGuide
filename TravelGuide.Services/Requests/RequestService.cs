@@ -38,10 +38,11 @@ namespace TravelGuide.Services.Requests
             return requests;
         }
 
-        public void ChangeStatus(Guid requestId, string option)
+        public void ChangeStatus(string id)
         {
-            var request = this.context.Requests.Find(requestId);
-            request.Status = option;
+            var parsedId = Guid.Parse(id);
+            var request = this.context.Requests.Find(parsedId);
+            request.Status = "Confirmed!";
             this.context.SaveChanges();
         }
     }

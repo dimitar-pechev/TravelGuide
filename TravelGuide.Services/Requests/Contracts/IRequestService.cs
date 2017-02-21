@@ -11,6 +11,6 @@ namespace TravelGuide.Services.Requests.Contracts
 
         IEnumerable<Request> GetAllRequests();
 
-        void ChangeStatus(Guid requestId, string option);
+        void ChangeStatus(string id);
     }
 }
