@@ -29,6 +29,17 @@ namespace TravelGuide.Gallery
                 return;
             }
 
+            if (this.User.Identity.IsAuthenticated)
+            {
+                this.ButtonLikeImage.Visible = true;
+                this.BtnRevelCommentModal.Visible = true;
+            }
+
+            if (this.User.IsInRole("admin"))
+            {
+                this.BtnDeleteImage.Visible = true;
+            }
+
             this.BindToNewData();
         }
 

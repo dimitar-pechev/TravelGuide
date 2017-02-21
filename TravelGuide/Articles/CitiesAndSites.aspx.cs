@@ -25,6 +25,11 @@ namespace TravelGuide
             var articles = this.articleService.GetAllNotDeletedArticlesOrderedByDate();
             this.ListViewDestinations.DataSource = articles;
             this.ListViewDestinations.DataBind();
+
+            if (this.User.IsInRole("admin"))
+            {
+                this.AddNewLink.Visible = true;
+            }
         }
 
         protected void SearchBarDiscover_TextChanged(object sender, EventArgs e)

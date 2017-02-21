@@ -21,6 +21,11 @@ namespace TravelGuide.Gallery
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.User.Identity.IsAuthenticated)
+            {
+                this.NewPhotoLink.Visible = true;
+            }
+
             this.ListViewGalleryItem.DataSource = this.service.GetAllNotDeletedGalleryImagesOrderedByDate();
             this.ListViewGalleryItem.DataBind();
         }

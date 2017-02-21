@@ -52,6 +52,10 @@ namespace TravelGuide.Store
                 this.QuantityWanted.Value = "1";
             }
 
+            if (this.User.IsInRole("admin"))
+            {
+                this.AdminOptionsPanel.Visible = true;
+            }
         }
 
         private Guid GetGuidFromString(string str)

@@ -36,7 +36,7 @@ namespace TravelGuide
             try
             {
                 var id = GetGuidFromString(this.Request.QueryString["id"]);
-                this.Article = this.articleService.GetArticleById(id);
+                this.Article = this.articleService.GetArticleById(id);                
             }
             catch (Exception)
             {
@@ -49,6 +49,16 @@ namespace TravelGuide
             if (this.Page.IsPostBack)
             {
                 return;
+            }
+
+            if (this.User.IsInRole("admin"))
+            {
+                this.PanelEditDelete.Visible = true;
+            }
+
+            if (this.User.Identity.IsAuthenticated)
+            {
+                this.BtnRevelCommentModal.Visible = true;
             }
 
             this.CoverPhoto.ImageUrl = this.Article.CoverImageUrl;
@@ -85,7 +95,7 @@ namespace TravelGuide
             this.articleService.DeleteArticle(Article);
             this.Response.Redirect("~/Articles/CitiesAndSites.aspx");
         }
-        
+
         protected void ListViewArticleComments_ItemDeleting(object sender, ListViewDeleteEventArgs e)
         {
             var id = string.Empty;

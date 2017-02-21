@@ -15,7 +15,7 @@
                 </ContentTemplate>
             </asp:UpdatePanel>
             <div class="col-md-4 text-right">
-                <asp:HyperLink NavigateUrl="~/Articles/AddArticle.aspx" CssClass="btn btn-success" Text="Add new article" runat="server" />
+                <asp:HyperLink NavigateUrl="~/Articles/AddArticle.aspx" ID="AddNewLink" Visible="false" CssClass="btn btn-success" Text="Add new article" runat="server" />
             </div>
         </div>
         <asp:UpdatePanel runat="server">

@@ -66,9 +66,22 @@
                                 <li><a runat="server" class="waves-effect waves-light" href="~/Account/Register">Register</a></li>
                             </ul>
                         </AnonymousTemplate>
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="admin">
+                                <ContentTemplate>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a runat="server" href="~/Admin/Admin" id="AdminTab" class="waves-effect waves-light">Admin</a></li>
+                                        <li><a runat="server" href="~/Store/Cart" class="waves-effect waves-light">Cart</a></li>
+                                        <li><a runat="server" href="~/Account/Manage" class="waves-effect waves-light" title="Manage your account">Profile</a></li>
+                                        <li>
+                                            <asp:LoginStatus runat="server" LogoutAction="Redirect" CssClass="waves-effect waves-light" LogoutText="Sign out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                        </li>
+                                    </ul>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
                         <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">                                
-                                <li><a runat="server" href="~/Admin/Admin" class="waves-effect waves-light">Admin</a></li>
+                            <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Store/Cart" class="waves-effect waves-light">Cart</a></li>
                                 <li><a runat="server" href="~/Account/Manage" class="waves-effect waves-light" title="Manage your account">Profile</a></li>
                                 <li>

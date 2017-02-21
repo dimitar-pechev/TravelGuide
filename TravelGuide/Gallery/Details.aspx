@@ -17,11 +17,11 @@
                         <p><%#: Image.Title  %></p>
                     </div>
                     <div class="col-md-6 text-right">
-                        <asp:Button Text='<%# string.Format("Like (" + Image.Likes.Count + ")") %>' runat="server" CssClass="btn btn-success btn-sm btn-gallery" ID="Button1"
+                        <asp:Button Text='<%# string.Format("Like (" + Image.Likes.Count + ")") %>' runat="server" CssClass="btn btn-success btn-sm btn-gallery" Visible="false" ID="ButtonLikeImage"
                             OnClick="BtnLikeImage_Click" />
                         <asp:Button Text='<%#: string.Format("Comments (" + Image.Comments.Count + ")") %>' runat="server" CssClass="btn btn-success btn-sm btn-gallery" ID="Button2"
                             OnClick="BtnCommentImage_Click" />
-                        <asp:Button Text="Delete" CssClass="btn btn-danger btn-sm btn-gallery" ID="Button3"
+                        <asp:Button Text="Delete" CssClass="btn btn-danger btn-sm btn-gallery" ID="BtnDeleteImage" Visible="false"
                             OnClick="BtnDeleteImage_Click" runat="server" />
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                                         <asp:Label Text='<%#: Item.Content %>' runat="server" />
                                     </p>
                                     <div class="text-right">
-                                        <asp:Button Text="Delete" CommandName="Delete" ID="BtnDeleteGalleryComment"
+                                        <asp:Button Text="Delete" CommandName="Delete" ID="BtnDeleteGalleryComment" Visible='<%# this.User.IsInRole("admin") %>'
                                             CssClass="pull-left btn btn-danger btn-sm" runat="server" />
                                         <asp:Label Text='<%#: Item.User.UserName %>' runat="server" />
                                         <br />
@@ -55,7 +55,7 @@
                         </ItemTemplate>
                     </asp:ListView>
                     <div class="row text-center">
-                        <asp:Button Text="Comment!" CssClass="btn btn-success btn-login" ID="BtnRevelCommentModal"
+                        <asp:Button Text="Comment!" CssClass="btn btn-success btn-login" ID="BtnRevelCommentModal" Visible="false"
                             data-toggle="modal" data-target="#comment-box" runat="server" />
                     </div>
                 </asp:Panel>

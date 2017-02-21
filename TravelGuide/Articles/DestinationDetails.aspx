@@ -76,7 +76,7 @@
             <%: this.Article.ContentAccomodation %>
         </div>
         <hr />
-        <div runat="server" id="PanelEditDelete" class="text-right" visible="true">
+        <div runat="server" id="PanelEditDelete" class="text-right" visible="false">
             <asp:HyperLink Text="Edit" NavigateUrl="" ID="EditBtnLink" CssClass="btn btn-warning" runat="server" />
             <asp:Button Text="Delete" CssClass="btn btn-danger" ID="BtnDeleteArticle" OnClick="BtnDeleteArticle_Click" runat="server" />
             <hr />
@@ -101,7 +101,7 @@
                                 <asp:Label Text='<%#: Item.Content %>' runat="server" />
                             </p>
                             <div class="text-right">
-                                <asp:Button Text="Delete" ID="BtnDeleteComment" CommandName="Delete"
+                                <asp:Button Text="Delete" ID="BtnDeleteComment" Visible='<%# this.User.IsInRole("admin") ? true : false %>' CommandName="Delete"
                                     CssClass="pull-left btn btn-sm btn-danger" runat="server" />
                                 <asp:Label Text='<%#: Item.User.UserName %>' runat="server" />
                                 <br />
@@ -112,7 +112,7 @@
                 </ItemTemplate>
             </asp:ListView>
             <div class="row text-center">
-                <asp:Button Text="Comment!" CssClass="btn btn-success btn-login" ID="BtnRevelCommentModal"
+                <asp:Button Text="Comment!" CssClass="btn btn-success btn-login" ID="BtnRevelCommentModal" Visible="false"
                     data-toggle="modal" data-target="#comment-box" runat="server" />
             </div>
         </div>

@@ -21,6 +21,11 @@ namespace TravelGuide.Store
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.User.IsInRole("admin"))
+            {
+                this.NewItemLink.Visible = true;
+            }
+
             this.ListViewStoreItems.DataSource = this.service.GetAllNotDeletedStoreItemsOrderedByDate();
             this.ListViewStoreItems.DataBind();
         }
