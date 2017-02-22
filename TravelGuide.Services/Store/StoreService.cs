@@ -97,12 +97,12 @@ namespace TravelGuide.Services.Store
 
         public void DeleteItem(Guid itemId)
         {
-            if (itemId == null)
-            {
-                throw new ArgumentNullException("Passed store item cannot be null!");
-            }
-
             var item = this.context.StoreItems.Find(itemId);
+
+            if (item == null)
+            {
+                throw new InvalidOperationException();
+            }
 
             item.IsDeleted = true;
             this.context.SaveChanges();
@@ -119,6 +119,11 @@ namespace TravelGuide.Services.Store
             }
 
             var storeItem = this.context.StoreItems.Find(item.Id);
+
+            if (storeItem == null)
+            {
+                throw new InvalidOperationException();
+            }
 
             storeItem.ItemName = itemName;
             storeItem.Description = description;
