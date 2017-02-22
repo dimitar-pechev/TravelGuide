@@ -100,7 +100,7 @@ namespace TravelGuide.Services.GalleryImages
             {
                 image.Likes.Add(like);
             }
-            
+
             this.context.SaveChanges();
         }
 
@@ -122,25 +122,48 @@ namespace TravelGuide.Services.GalleryImages
 
         public GalleryImage GetGalleryImageById(Guid id)
         {
-            if (id == null)
-            {
-                throw new InvalidOperationException("Passed guid cannot be null!");
-            }
-
             var image = this.context.GalleryImages.Find(id);
             return image;
         }
 
         public void DeleteImage(GalleryImage image)
         {
-            image.IsDeleted = true;
+            if (image == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var dbImage = this.context.GalleryImages.Find(image.Id);
+            dbImage.IsDeleted = true;
+
             this.context.SaveChanges();
         }
 
-        public void AddNewImage(string username, string title, string imageUrl)
+        public void AddNewImage(string id, string title, string imageUrl)
         {
-            var userId = Guid.Parse(this.context.Users.FirstOrDefault(x => x.UserName == username).Id);
-            var user = this.context.Users.FirstOrDefault(x => x.UserName == username);
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (string.IsNullOrEmpty(title))
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (string.IsNullOrEmpty(imageUrl))
+            {
+                throw new ArgumentNullException();
+            }
+
+            var user = this.context.Users.Find(id);
+
+            if (user == null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            var userId = Guid.Parse(user.Id);
 
             var image = this.imageFactory.CreateGalleryImage(title, imageUrl, userId, user);
 
@@ -150,9 +173,19 @@ namespace TravelGuide.Services.GalleryImages
 
         public void DeleteComment(string commentId)
         {
-            var parsedId = Guid.Parse(commentId);
+            if (string.IsNullOrEmpty(commentId))
+            {
+                throw new ArgumentNullException();
+            }
 
+            var parsedId = Guid.Parse(commentId);
             var comment = this.context.GalleryComments.Find(parsedId);
+
+            if (comment == null)
+            {
+                throw new InvalidOperationException();
+            }
+
             this.context.GalleryComments.Remove(comment);
 
             this.context.SaveChanges();

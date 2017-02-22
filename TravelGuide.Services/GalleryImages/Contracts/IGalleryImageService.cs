@@ -18,7 +18,7 @@ namespace TravelGuide.Services.GalleryImages.Contracts
 
         void DeleteImage(GalleryImage image);
 
-        void AddNewImage(string username, string title, string imageUrl);
+        void AddNewImage(string id, string title, string imageUrl);
 
         void DeleteComment(string commentId);
     }

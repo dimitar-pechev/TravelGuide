@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using Microsoft.AspNet.Identity;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +27,11 @@ namespace TravelGuide.Gallery
 
         protected void BtnAddNewPhoto_Click(object sender, EventArgs e)
         {
-            var username = this.User.Identity.Name;
+            var userId = this.User.Identity.GetUserId();
             var title = this.NewImageTitle.Text;
             var newImageUrl = this.NewImageUrl.Text;
 
-            this.service.AddNewImage(username, title, newImageUrl);
+            this.service.AddNewImage(userId, title, newImageUrl);
 
             this.Response.Redirect("~/Gallery/AllPhotos.aspx");
         }

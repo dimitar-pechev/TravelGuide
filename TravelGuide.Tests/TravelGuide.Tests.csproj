@@ -86,7 +86,11 @@
     <Compile Include="Services\Articles\ArticleServiceTests\GetArticleById_Should.cs" />
     <Compile Include="Services\Articles\Mock\ExtendedArticleService.cs" />
     <Compile Include="Services\GalleryImages\GalleryImageServiceTests\AddComment_Should.cs" />
+    <Compile Include="Services\GalleryImages\GalleryImageServiceTests\AddNewImage_Should.cs" />
     <Compile Include="Services\GalleryImages\GalleryImageServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\GalleryImages\GalleryImageServiceTests\DeleteComment_Should.cs" />
+    <Compile Include="Services\GalleryImages\GalleryImageServiceTests\DeleteImage_Should.cs" />
+    <Compile Include="Services\GalleryImages\GalleryImageServiceTests\GetGalleryImageById_Should.cs" />
     <Compile Include="Services\GalleryImages\GalleryImageServiceTests\ToggleLike_Should.cs" />
     <Compile Include="Services\GalleryImages\Mocks\ExtendedGalleryImageService.cs" />
   </ItemGroup>
