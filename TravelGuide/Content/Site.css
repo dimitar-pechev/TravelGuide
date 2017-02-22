@@ -136,6 +136,7 @@ body {
 .destinations-container {
     margin-top: -5%;
     padding-top: 5%;
+    padding-bottom: 3%;
     background-color: white;
     min-height: 600px;
 }

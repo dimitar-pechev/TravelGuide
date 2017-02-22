@@ -8,7 +8,7 @@ namespace TravelGuide.Services.Store.Contracts
     {
         HttpCookie WriteCookie(HttpCookie cookie, string username, string itemId, string quantity);
         
-        IEnumerable<StoreItem> extractItemsFromCookie(HttpCookie cookie);
+        IEnumerable<StoreItem> ExtractItemsFromCookie(HttpCookie cookie);
 
         HttpCookie DeleteItemFromCookie(HttpCookie cookie, string itemId);
 

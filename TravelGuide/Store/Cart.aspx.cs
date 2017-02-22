@@ -33,7 +33,7 @@ namespace TravelGuide
         protected void Page_Load(object sender, EventArgs e)
         {
             var cookie = this.Request.Cookies[CookieName + this.User.Identity.Name];
-            var items = this.cartService.extractItemsFromCookie(cookie);
+            var items = this.cartService.ExtractItemsFromCookie(cookie);
 
             if (items.Count() == 0)
             {
@@ -70,7 +70,7 @@ namespace TravelGuide
             var newCookie = this.cartService.DeleteItemFromCookie(cookie, id);
             this.Response.Cookies.Add(newCookie);
 
-            var items = this.cartService.extractItemsFromCookie(newCookie);
+            var items = this.cartService.ExtractItemsFromCookie(newCookie);
 
             if (items.Count() == 0)
             {
@@ -97,7 +97,7 @@ namespace TravelGuide
 
         protected void BtnCheckOut_Click(object sender, EventArgs e)
         {
-            var items = this.cartService.extractItemsFromCookie(this.Request.Cookies[CookieName + this.User.Identity.Name]);
+            var items = this.cartService.ExtractItemsFromCookie(this.Request.Cookies[CookieName + this.User.Identity.Name]);
             var id = this.User.Identity.GetUserId();
 
             var firstName = this.FirstName.Text;

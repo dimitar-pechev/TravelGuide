@@ -10,14 +10,19 @@ namespace TravelGuide.Services.Store
     public class CartService : ICartService
     {
         private const string CookieName = "store-items";
-        private readonly IStoreService service;
+        protected readonly IStoreService service;
 
         public CartService(IStoreService service)
         {
+            if (service == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             this.service = service;
         }
 
-        public IEnumerable<StoreItem> extractItemsFromCookie(HttpCookie cookie)
+        public IEnumerable<StoreItem> ExtractItemsFromCookie(HttpCookie cookie)
         {
             var items = new List<StoreItem>();
             if (cookie == null || !cookie.Name.Contains(CookieName))
@@ -84,6 +89,11 @@ namespace TravelGuide.Services.Store
 
         public HttpCookie GetClearedCookie(string username)
         {
+            if (string.IsNullOrEmpty(username))
+            {
+                throw new ArgumentNullException();
+            }
+
             return new HttpCookie(CookieName + username, string.Empty);
         }
     }
