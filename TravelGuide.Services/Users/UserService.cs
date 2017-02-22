@@ -9,10 +9,15 @@ namespace TravelGuide.Services.Users
 {
     public class UserService : IUserService
     {
-        private ITravelGuideContext context;
+        protected ITravelGuideContext context;
 
         public UserService(ITravelGuideContext context)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             this.context = context;
         }
 
@@ -24,6 +29,12 @@ namespace TravelGuide.Services.Users
             }
 
             var user = this.context.Users.Find(userId);
+
+            if (user == null)
+            {
+                throw new InvalidOperationException();
+            }
+
             user.IsDeleted = true;
             this.context.SaveChanges();
         }
@@ -36,6 +47,12 @@ namespace TravelGuide.Services.Users
             }
 
             var user = this.context.Users.Find(userId);
+
+            if (user == null)
+            {
+                throw new InvalidOperationException();
+            }
+
             user.IsDeleted = false;
             this.context.SaveChanges();
         }
@@ -48,6 +65,11 @@ namespace TravelGuide.Services.Users
 
         public User GetById(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentNullException();
+            }
+
             var user = this.context.Users.Find(id);
             return user;
         }
@@ -60,7 +82,17 @@ namespace TravelGuide.Services.Users
 
         public void UpdateUserInfo(string id, string firstName, string lastName, string phone, string address)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentNullException();
+            }
+
             var user = this.context.Users.Find(id);
+
+            if (user == null)
+            {
+                throw new InvalidOperationException();
+            }
 
             user.FirstName = firstName;
             user.LastName = lastName;

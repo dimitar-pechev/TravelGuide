@@ -104,6 +104,12 @@
     <Compile Include="Services\Store\StoreServiceTests\DeleteItem_Should.cs" />
     <Compile Include="Services\Store\StoreServiceTests\EditItem_Should.cs" />
     <Compile Include="Services\Store\StoreServiceTests\GetStoreItemById_Should.cs" />
+    <Compile Include="Services\Users\Mocks\UserServiceMock.cs" />
+    <Compile Include="Services\Users\UserServiceTests\ActivateUser_Should.cs" />
+    <Compile Include="Services\Users\UserServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\Users\UserServiceTests\DeleteUser_Should.cs" />
+    <Compile Include="Services\Users\UserServiceTests\GetById_Should.cs" />
+    <Compile Include="Services\Users\UserServiceTests\UpdateUserInfo_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelGuide.Auth\TravelGuide.Auth.csproj">
