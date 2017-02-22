@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using Microsoft.AspNet.Identity;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +52,7 @@ namespace TravelGuide.Gallery
 
         protected void BtnLikeImage_Click(object sender, EventArgs e)
         {
-            this.service.ToggleLike(this.User.Identity.Name, Image.Id);
+            this.service.ToggleLike(this.User.Identity.GetUserId(), Image.Id);
             this.BindToNewData();
         }
 
@@ -75,7 +76,7 @@ namespace TravelGuide.Gallery
 
         protected void BtnSubmitNewComment_Click(object sender, EventArgs e)
         {
-            this.service.AddComment(this.User.Identity.Name, this.NewCommentContent.Value.Trim(), Image.Id);
+            this.service.AddComment(this.User.Identity.GetUserId(), this.NewCommentContent.Value.Trim(), Image.Id);
             this.BindToNewData();
         }
 

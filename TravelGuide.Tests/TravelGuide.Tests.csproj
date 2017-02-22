@@ -85,6 +85,10 @@
     <Compile Include="Services\Articles\ArticleServiceTests\EditArticle_Should.cs" />
     <Compile Include="Services\Articles\ArticleServiceTests\GetArticleById_Should.cs" />
     <Compile Include="Services\Articles\Mock\ExtendedArticleService.cs" />
+    <Compile Include="Services\GalleryImages\GalleryImageServiceTests\AddComment_Should.cs" />
+    <Compile Include="Services\GalleryImages\GalleryImageServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\GalleryImages\GalleryImageServiceTests\ToggleLike_Should.cs" />
+    <Compile Include="Services\GalleryImages\Mocks\ExtendedGalleryImageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelGuide.Auth\TravelGuide.Auth.csproj">

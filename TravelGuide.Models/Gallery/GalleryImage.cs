@@ -5,7 +5,7 @@ namespace TravelGuide.Models.Gallery
 {
     public class GalleryImage
     {
-        private GalleryImage()
+        public GalleryImage()
         {
             this.Id = Guid.NewGuid();
             this.CreatedOn = DateTime.Now;

@@ -19,27 +19,68 @@ namespace TravelGuide.Services.GalleryImages
         public GalleryImageService(ITravelGuideContext context, IGalleryImageFactory imageFactory,
             IGalleryLikeFactory likeFactory, IGalleryCommentFactory commentFactory)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException("Context cannot be null!");
+            }
+
+            if (imageFactory == null)
+            {
+                throw new ArgumentNullException("Image factory cannot be null!");
+            }
+
+            if (likeFactory == null)
+            {
+                throw new ArgumentNullException("Like factory cannot be null!");
+            }
+
+            if (commentFactory == null)
+            {
+                throw new ArgumentNullException("Comment factory cannot be null!");
+            }
+
             this.context = context;
             this.imageFactory = imageFactory;
             this.likeFactory = likeFactory;
             this.commentFactory = commentFactory;
         }
 
-        public void AddComment(string username, string content, Guid imageId)
+        public void AddComment(string id, string content, Guid imageId)
         {
-            var userId = Guid.Parse(this.context.Users.FirstOrDefault(x => x.UserName == username).Id);
-            var user = this.context.Users.FirstOrDefault(x => x.UserName == username);
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (string.IsNullOrEmpty(content))
+            {
+                throw new ArgumentNullException();
+            }
+
+            var user = this.context.Users.Find(id);
+
+            if (user == null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            var userId = Guid.Parse(user.Id);
             var comment = this.commentFactory.CreateGalleryComment(userId, user, content, imageId);
-            var image = this.GetGalleryImageById(imageId);
+            var image = this.context.GalleryImages.Find(imageId);
             image.Comments.Add(comment);
             this.context.SaveChanges();
         }
 
-        public void ToggleLike(string username, Guid imageId)
+        public void ToggleLike(string id, Guid imageId)
         {
-            var userId = Guid.Parse(this.context.Users.FirstOrDefault(x => x.UserName == username).Id);
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentNullException();
+            }
+
+            var userId = Guid.Parse(this.context.Users.Find(id).Id);
             var like = this.likeFactory.CreateGalleryLike(userId, imageId);
-            var image = this.GetGalleryImageById(imageId);
+            var image = this.context.GalleryImages.Find(imageId);
 
             GalleryLike dbLike = null;
             foreach (var item in image.Likes)
@@ -86,7 +127,7 @@ namespace TravelGuide.Services.GalleryImages
                 throw new InvalidOperationException("Passed guid cannot be null!");
             }
 
-            var image = this.GetAllNotDeletedGalleryImagesOrderedByDate().FirstOrDefault(x => x.Id == id);
+            var image = this.context.GalleryImages.Find(id);
             return image;
         }
 

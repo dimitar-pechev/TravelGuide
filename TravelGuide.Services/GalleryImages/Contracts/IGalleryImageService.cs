@@ -12,9 +12,9 @@ namespace TravelGuide.Services.GalleryImages.Contracts
 
         GalleryImage GetGalleryImageById(Guid id);
 
-        void ToggleLike(string username, Guid imageId);
+        void ToggleLike(string id, Guid imageId);
 
-        void AddComment(string username, string content, Guid imageId);
+        void AddComment(string id, string content, Guid imageId);
 
         void DeleteImage(GalleryImage image);
 

@@ -192,6 +192,7 @@
     <Content Include="Articles\AddArticle.aspx" />
     <Content Include="Articles\CitiesAndSites.aspx" />
     <Content Include="Articles\EditArticle.aspx" />
+    <Content Include="ErrorPages\generic.html" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\1487625596_profle.png" />
     <Content Include="Images\2.jpg" />
