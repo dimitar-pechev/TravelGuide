@@ -77,7 +77,7 @@
         </div>
         <hr />
         <div runat="server" id="PanelEditDelete" class="text-right" visible="false">
-            <asp:HyperLink Text="Edit" NavigateUrl="" ID="EditBtnLink" CssClass="btn btn-warning" runat="server" />
+            <asp:HyperLink Text="Edit" NavigateUrl="" ID="EditBtnLink" CssClass="btn btn-warning black" runat="server" />
             <asp:Button Text="Delete" CssClass="btn btn-danger" ID="BtnDeleteArticle" OnClick="BtnDeleteArticle_Click" runat="server" />
             <hr />
         </div>

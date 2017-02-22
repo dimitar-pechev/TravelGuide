@@ -189,6 +189,7 @@ body {
 }
 
 .destinations-entry-content {
+    margin-top: 22px;
     overflow: hidden;
     height: 3.21rem;
     line-height: 1.07rem;

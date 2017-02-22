@@ -87,6 +87,7 @@ namespace TravelGuide
             var content = this.NewCommentContent.Value;
             var articleId = this.Article.Id;
             this.articleService.AddComment(id, content, articleId);
+            this.NewCommentContent.Value = string.Empty;
             this.ListViewArticleComments.DataSource = this.Article.Comments;
             this.ListViewArticleComments.DataBind();
         }

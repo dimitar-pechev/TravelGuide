@@ -77,6 +77,7 @@ namespace TravelGuide.Gallery
         protected void BtnSubmitNewComment_Click(object sender, EventArgs e)
         {
             this.service.AddComment(this.User.Identity.GetUserId(), this.NewCommentContent.Value.Trim(), Image.Id);
+            this.NewCommentContent.Value = string.Empty;
             this.BindToNewData();
         }
 

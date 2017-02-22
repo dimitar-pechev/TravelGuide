@@ -97,6 +97,10 @@
     <Compile Include="Services\Requests\RequestServiceTests\ChangeStatus_Should.cs" />
     <Compile Include="Services\Requests\RequestServiceTests\Constructor_Should.cs" />
     <Compile Include="Services\Requests\RequestServiceTests\MakeRequest_Should.cs" />
+    <Compile Include="Services\Store\Mocks\StoreServiceMock.cs" />
+    <Compile Include="Services\Store\StoreServiceTests\AddNewItem_Should.cs" />
+    <Compile Include="Services\Store\StoreServiceTests\ChangeStatus_Should.cs" />
+    <Compile Include="Services\Store\StoreServiceTests\Constructor_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelGuide.Auth\TravelGuide.Auth.csproj">

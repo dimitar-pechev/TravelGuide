@@ -10,17 +10,57 @@ namespace TravelGuide.Services.Store
 {
     public class StoreService : IStoreService
     {
-        private readonly ITravelGuideContext context;
-        private readonly IStoreItemFactory factory;
+        protected readonly ITravelGuideContext context;
+        protected readonly IStoreItemFactory factory;
 
         public StoreService(ITravelGuideContext context, IStoreItemFactory factory)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             this.context = context;
             this.factory = factory;
         }
 
         public bool AddNewItem(string itemName, string description, string destFor, string imageUrl, string brand, string price)
         {
+            if (string.IsNullOrEmpty(itemName))
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (string.IsNullOrEmpty(description))
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (string.IsNullOrEmpty(destFor))
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (string.IsNullOrEmpty(imageUrl))
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (string.IsNullOrEmpty(brand))
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (string.IsNullOrEmpty(price))
+            {
+                throw new ArgumentNullException();
+            }
+
             double parsedPrice;
             var isParsable = double.TryParse(price, out parsedPrice);
 
@@ -37,11 +77,6 @@ namespace TravelGuide.Services.Store
 
         public void ChangeStatus(Guid itemId, string option)
         {
-            if (itemId == null)
-            {
-                throw new ArgumentNullException("Passed store item cannot be null!");
-            }
-
             if (option != "true" && option != "false")
             {
                 throw new ArgumentException();
@@ -49,6 +84,12 @@ namespace TravelGuide.Services.Store
 
             var status = bool.Parse(option);
             var item = this.context.StoreItems.Find(itemId);
+
+            if (item == null)
+            {
+                throw new InvalidOperationException();
+            }
+
             item.InStock = status;
 
             this.context.SaveChanges();
