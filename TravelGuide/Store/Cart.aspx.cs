@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using Microsoft.AspNet.Identity;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,7 +98,7 @@ namespace TravelGuide
         protected void BtnCheckOut_Click(object sender, EventArgs e)
         {
             var items = this.cartService.extractItemsFromCookie(this.Request.Cookies[CookieName + this.User.Identity.Name]);
-            var username = this.User.Identity.Name;
+            var id = this.User.Identity.GetUserId();
 
             var firstName = this.FirstName.Text;
             var lastName = this.LastName.Text;
@@ -106,7 +107,7 @@ namespace TravelGuide
 
             foreach (var item in items)
             {
-                this.requestService.MakeRequest(item, username, firstName, lastName, phone, address);
+                this.requestService.MakeRequest(item, id, firstName, lastName, phone, address);
             }
 
             var cookie = this.cartService.GetClearedCookie(this.User.Identity.Name);

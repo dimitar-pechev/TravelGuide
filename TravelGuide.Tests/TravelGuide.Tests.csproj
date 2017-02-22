@@ -93,6 +93,10 @@
     <Compile Include="Services\GalleryImages\GalleryImageServiceTests\GetGalleryImageById_Should.cs" />
     <Compile Include="Services\GalleryImages\GalleryImageServiceTests\ToggleLike_Should.cs" />
     <Compile Include="Services\GalleryImages\Mocks\ExtendedGalleryImageService.cs" />
+    <Compile Include="Services\Requests\Mocks\RequestServiceMock.cs" />
+    <Compile Include="Services\Requests\RequestServiceTests\ChangeStatus_Should.cs" />
+    <Compile Include="Services\Requests\RequestServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\Requests\RequestServiceTests\MakeRequest_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelGuide.Auth\TravelGuide.Auth.csproj">
@@ -120,6 +124,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
