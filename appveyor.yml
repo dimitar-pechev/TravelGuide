@@ -4,5 +4,6 @@ before_build:
   - nuget restore
   
 build:
+  project: TravelGuide.sln
   verbosity: minimal
   publish_wap: true
